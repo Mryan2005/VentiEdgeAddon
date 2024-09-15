@@ -24,7 +24,7 @@
             bottom: 20px;
             height: 80px;
             background: rgba(107, 107, 107, 0.3);
-            border-radius: 20px;
+            border-radius: 18px;
             display: flex;
             align-items: flex-end;
             box-sizing: border-box;
@@ -70,10 +70,15 @@
             padding: 20px;
             z-index: 9999;
         }
+
+        .vertical-line {
+            height: 50px;
+            border-left: 1px solid black;
+        }
     </style>
 </head>
  
-<body>
+<body background="https://bing.img.run/1920x1080.php    ">
     <div id="popup" class="popup">
         <h2>这是一个弹窗</h2>
         <p>弹窗内容...</p>
@@ -177,6 +182,10 @@
         </div>
         <div class="item">
             <div class="menu"></div>
+            <div class="gap"></div>
+        </div>
+        <div class="item">
+            <div class="vertical-line"></div>
             <div class="gap"></div>
         </div>
         <div class="item">
