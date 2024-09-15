@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* 弹窗样式 */
+        .popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 200px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <!-- 触发弹窗的按钮 -->
+    <button onclick="showPopup()">显示弹窗</button>
+
+    <!-- 弹窗内容 -->
+    <div id="popup" class="popup">
+        <h2>这是一个弹窗</h2>
+        <p>弹窗内容...</p>
+        <button onclick="hidePopup()">关闭弹窗</button>
+    </div>
+
+    <script>
+        // 显示弹窗
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        // 隐藏弹窗
+        function hidePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+   "chrome_url_overrides": {
+      "newtab": "tab.html"
+   },
+	"manifest_version": 3,
+   "name": "myextension_newtab",
+   "version": "1.0.0",
+   "icons": {
+      "16": "icons/icon16x16.png",
+      "32": "icons/icon32x32.png",
+      "64": "icons/icon64x64.png",
+      "128": "icons/icon128x128.png"
+   }
+}
