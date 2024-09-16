@@ -24,7 +24,7 @@
             translate: -50% 0;
             bottom: 20px;
             height: 80px;
-            background: rgba(255, 255, 255, 0.55);
+            background: rgba(255, 255, 255, 0.24);
             backdrop-filter: blur(6px);
             -webkit-backdrop-filter: blur(6px);
             border: 0.519481px solid rgba(255, 255, 255, 0.18);
@@ -110,14 +110,31 @@
         .bar {
             display: flex;
             align-items: center;
-            justify-content: space-between;
             padding: 0px 15px;
             height: 30px;
-            background: rgba(255, 255, 255, 0.55);
+            background: rgba(255, 255, 255, 0.50);
             backdrop-filter: blur(6px);
             -webkit-backdrop-filter: blur(6px);
             border: 0.519481px solid rgba(255, 255, 255, 0.18);
             box-sizing: border-box;
+            justify-content: flex-start;
+        }
+
+        .bar_div {
+            padding: 0px 10px;
+            height: 18px;
+            background: transparent;
+            transition: all 0.35s;
+        }
+
+        .bar_p {
+            height: 18px;
+            font-size: 13px;
+        }
+
+        .bar_title {
+            height: 18px;
+            font-weight: 700;
         }
 
         .apple_logo {
@@ -146,6 +163,20 @@
     <header id="topbar" style="animation: 0.2s ease-in-out 0s 1 normal forwards running opacityBegin; color: rgb(0, 0, 0); text-shadow: none;"> <!-- Finder Bar -->
         <div id="topbar-inner" class="bar">
             <img src="icons/Apple.png" alt="icon" style="width: 20px; height: 20px; border-radius: 10px;" class="apple_logo">
+            <div class="bar_div"></div>
+            <div class="bar_title">Finder</div>
+            <div class="bar_div"></div>
+            <div class="bar_p">File</div>
+            <div class="bar_div"></div>
+            <div class="bar_p">Edit</div>
+            <div class="bar_div"></div>
+            <div class="bar_p">View</div>
+            <div class="bar_div"></div>
+            <div class="bar_p">Go</div>
+            <div class="bar_div"></div>
+            <div class="bar_p">Window</div>
+            <div class="bar_div"></div>
+            <div class="bar_p">Help</div>
             <!--显示当前时间-->
             <!--运行getD1()函数-->
             <div id="div" style="width: auto; height: auto; font-size: 15px; color: black;"></div>
