@@ -56,6 +56,24 @@
             transition: all 0.35s;
             cursor: pointer;
         }
+
+        .menu a {
+            -webkit-user-drag: none;
+        }
+
+        .menu a img {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            -webkit-user-drag: none;
+        }
+
+        .menu img {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            -webkit-user-drag: none;
+        }
      
         .gap {
             width: calc(15px * var(--scale));
@@ -101,6 +119,10 @@
             border: 0.519481px solid rgba(255, 255, 255, 0.18);
             box-sizing: border-box;
         }
+
+        .apple_logo {
+            -webkit-user-drag: none;
+        }
     </style>
     <!--获取当前时间-->
     <script>
@@ -123,7 +145,7 @@
 <body background="https://t.mwm.moe/pc" style="background-size:cover;">
     <header id="topbar" style="animation: 0.2s ease-in-out 0s 1 normal forwards running opacityBegin; color: rgb(0, 0, 0); text-shadow: none;"> <!-- Finder Bar -->
         <div id="topbar-inner" class="bar">
-            <img src="icons/logo.ico" alt="icon" style="width: 20px; height: 20px; border-radius: 10px;">
+            <img src="icons/Apple.png" alt="icon" style="width: 20px; height: 20px; border-radius: 10px;" class="apple_logo">
             <!--显示当前时间-->
             <!--运行getD1()函数-->
             <div id="div" style="width: auto; height: auto; font-size: 15px; color: black;"></div>
@@ -192,24 +214,25 @@
                 items[h].style = "--scale:1"
             }
         }
+        return 0;
     </script>
     
     <div class="container" id="container">
         <div class="item">
             <div class="menu">
-                <img src="icons/finder.png" alt="icon" style="width: 50px; height: 50px; border-radius: 10px;">
+                <img src="icons/finder.png" alt="icon">
             </div>
             <div class="gap"></div>
         </div>
         <div class="item">
             <div class="menu">
-                <img src="icons/launchpad.jpg" alt="icon" style="width: 50px; height: 50px; border-radius: 10px;">
+                <img src="icons/launchpad.jpg" alt="icon">
             </div>
             <div class="gap"></div>
         </div>
         <div class="item">
             <div class="menu">
-                
+                <a href="https://www.csdn.net"><img src="https://csdnimg.cn/public/favicon.ico" alt="icon"></a>
             </div>
             <div class="gap"></div>
         </div>
@@ -235,25 +258,25 @@
         </div>
         <div class="item">
             <div class="menu">
-                <a href="http://openjudge.cn"><img src="icons/oj.png" alt="icon" style="width: 50px; height: 50px; border-radius: 10px;"></a>
+                <a href="http://openjudge.cn"><img src="icons/oj.png" alt="icon"></a>
             </div>
             <div class="gap"></div>
         </div>
         <div class="item">
             <div class="menu">
-                <a href="https://www.sspu.edu.cn"><img src="icons/SSPU.png" alt="icon" style="width: 50px; height: 50px; border-radius: 10px;"></a>
+                <a href="https://www.sspu.edu.cn"><img src="icons/SSPU.png" alt="icon"></a>
             </div>
             <div class="gap"></div>
         </div>
         <div class="item">
             <div class="menu">
-                <a href="https://github.com"><img src="icons/Github.png" alt="icon" style="width: 50px; height: 50px; border-radius: 10px;"></a>
+                <a href="www.bilibili.com"><img src="icons/bilibili.png" alt="icon"></a>
             </div>
             <div class="gap"></div>
         </div>
         <div class="item">
             <div class="menu">
-                <a a href="javascript:void(0)" onclick="showPopup()"><img src="icons/icon128x128.png" alt="icon" style="width: 50px; height: 50px; border-radius: 10px;"></a>
+                <a href="https://github.com/Mryan2005/VentiEdgeAddons"><img src="icons/icon128x128.png" alt="icon"></a>
             </div>
         </div>
     </div>
