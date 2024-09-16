@@ -3,7 +3,7 @@
       "newtab": "tab.html"
    },
 	"manifest_version": 3,
-   "name": "Venti Edge Addons",
+   "name": "Venti Edge Addon",
    "version": "1.0.0",
    "icons": {
       "16": "icons/icon16x16.png",
