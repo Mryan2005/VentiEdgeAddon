@@ -94,7 +94,7 @@
             align-items: center;
             justify-content: space-between;
             padding: 0px 15px;
-            height: 24px;
+            height: 30px;
             background: rgba(255, 255, 255, 0.55);
             backdrop-filter: blur(6px);
             -webkit-backdrop-filter: blur(6px);
@@ -102,11 +102,31 @@
             box-sizing: border-box;
         }
     </style>
+    <!--获取当前时间-->
+    <script>
+        var i=0;
+        function myDate(){
+            var now=new Date();
+            var year=now.getFullYear();
+            var month=now.getMonth()+1;
+            var day=now.getDate();
+            var hours=now.getHours();
+            var minutes=now.getMinutes();
+            var seconds=now.getSeconds();
+     
+            document.getElementById("div").innerHTML=year+"年"+month+"月"+day+"日"+hours+"："+minutes+"："+seconds;
+        }
+        setInterval(myDate,1000);
+    </script>
 </head>
  
 <body background="https://t.mwm.moe/pc" style="background-size:cover;">
     <header id="topbar" style="animation: 0.2s ease-in-out 0s 1 normal forwards running opacityBegin; color: rgb(0, 0, 0); text-shadow: none;"> <!-- Finder Bar -->
         <div id="topbar-inner" class="bar">
+            <img src="icons/logo.ico" alt="icon" style="width: 20px; height: 20px; border-radius: 10px;">
+            <!--显示当前时间-->
+            <!--运行getD1()函数-->
+            <div id="div" style="width: auto; height: auto; font-size: 15px; color: black;"></div>
         </div>
     </header>
     <script>
