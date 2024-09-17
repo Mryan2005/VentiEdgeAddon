@@ -2,7 +2,9 @@
    "chrome_url_overrides": {
       "newtab": "tab.html"
    },
+   "homepage_url": "https://ventiedgeaddon.mryan2005.top/",
 	"manifest_version": 3,
+   "author": "Mryan2005",
    "name": "Venti Edge Addon",
    "version": "1.0.0",
    "icons": {
@@ -10,5 +12,6 @@
       "32": "icons/icon32x32.png",
       "64": "icons/icon64x64.png",
       "128": "icons/icon128x128.png"
-   }
+   },
+   "permissions": ["notifications"]
 }

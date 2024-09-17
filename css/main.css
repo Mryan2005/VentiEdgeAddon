@@ -1,0 +1,198 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: auto;
+    padding: 15px;
+    position: fixed;
+    left: 50%;
+    translate: -50% 0;
+    bottom: 20px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.24);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 0.519481px solid rgba(255, 255, 255, 0.18);
+    box-shadow: rgba(142, 142, 142, 0.19) 0px 6px 15px 0px;
+    -webkit-box-shadow: rgba(142, 142, 142, 0.19) 0px 6px 15px 0px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 18px;
+    display: flex;
+    align-items: flex-end;
+    box-sizing: border-box;
+}
+
+.item {
+    --scale: 1;
+    padding-bottom: calc((var(--scale) * 50px) - (50px / var(--scale)));
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    transition: all 0.35s;
+}
+
+.menu {
+    width: calc(50px * var(--scale));
+    height: calc(50px * var(--scale));
+    /* background: rgba(229, 229, 229, 0.95); */
+    border-radius: 11.13px;
+    /* border-radius: calc(10px * var(--scale)); */
+    transition: all 0.35s;
+    cursor: pointer;
+    user-select: none;
+}
+
+.menu a {
+    -webkit-user-drag: none;
+}
+
+.menu a img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    -webkit-user-drag: none;
+}
+
+.menu img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    -webkit-user-drag: none;
+}
+
+.gap {
+    width: calc(15px * var(--scale));
+    height: 50px;
+    background: transparent;
+    transition: all 0.35s;
+}
+
+/* 弹窗样式 */
+.popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 200px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    z-index: 9999;
+}
+
+.vertical-line {
+    height: 50px;
+    border-left: 1px solid black;
+}
+
+header {
+    unicode-bidi: isolate;
+}
+
+.bar {
+    display: flex;
+    align-items: center;
+    padding: 0px 15px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 0.519481px solid rgba(255, 255, 255, 0.18);
+    box-sizing: border-box;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+.bar_div {
+    padding: 0px 10px;
+    height: 16px;
+    background: transparent;
+    transition: all 0.35s;
+    align-items: center;
+    -webkit-user-drag: none;
+    justify-content: flex-start;
+}
+
+.bar_p {
+    height: 16px;
+    font-size: 13px;
+    -webkit-user-drag: none;
+    cursor: pointer;
+    user-select: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+* {
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif;
+}
+
+.bar_title {
+    height: 16px;
+    font-weight: 700;
+    align-items: center;
+    justify-content: flex-start;
+    -webkit-user-drag: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+.apple_logo {
+    -webkit-user-drag: none;
+    cursor: pointer;
+    user-select: none;
+    justify-content: flex-start;
+    width: 16px; 
+    height: 16px; 
+    border-radius: 10px;
+}
+
+.appleItem {
+    display: inline-block;
+    padding: 0px 0px;
+    width: auto;
+    justify-content: flex-end;
+    align-items: center;
+    -webkit-user-drag: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+.appleItemSiri {
+    padding: 1px 0px 0px;
+    width: 18px;
+    height: 18px;
+}
+
+.appleItemSizeDefault {
+    width: 20px;
+    height: 20px;
+}
+
+.appleItemBattery {
+    padding: 0px 0px 0.5px;
+    width: 22px;
+    height: 14px; 
+}
+
+.appleItemDiv {
+    justify-content: flex-end;
+    padding: 0px 7px;
+    height: 20px;
+    background: transparent;
+    transition: all 0.35s;
+    align-items: center;
+    -webkit-user-drag: none;
+}
+
+.bar_right {
+    margin-left: auto;
+    align-items: center;
+    padding: 0px 10px;
+}
