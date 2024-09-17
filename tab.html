@@ -104,7 +104,6 @@
         }
 
         header {
-            display: block;
             unicode-bidi: isolate;
         }
 
@@ -112,13 +111,12 @@
             display: flex;
             align-items: center;
             padding: 0px 15px;
-            height: 28px;
+            height: 30px;
             background: rgba(255, 255, 255, 0.50);
             backdrop-filter: blur(6px);
             -webkit-backdrop-filter: blur(6px);
             border: 0.519481px solid rgba(255, 255, 255, 0.18);
             box-sizing: border-box;
-            justify-content: flex-start;
             -webkit-user-drag: none;
             user-select: none;
         }
@@ -128,7 +126,9 @@
             height: 16px;
             background: transparent;
             transition: all 0.35s;
+            align-items: center;
             -webkit-user-drag: none;
+            justify-content: flex-start;
         }
 
         .bar_p {
@@ -138,6 +138,8 @@
             cursor: pointer;
             user-select: none;
             flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
         }
 
         * {
@@ -147,6 +149,8 @@
         .bar_title {
             height: 16px;
             font-weight: 700;
+            align-items: center;
+            justify-content: flex-start;
             -webkit-user-drag: none;
             cursor: pointer;
             user-select: none;
@@ -156,9 +160,42 @@
             -webkit-user-drag: none;
             cursor: pointer;
             user-select: none;
+            justify-content: flex-start;
             width: 16px; 
             height: 16px; 
             border-radius: 10px;
+        }
+
+        .mid {
+            padding: 0px 20%;
+        }
+
+        .appleItem {
+            display: inline-block;
+            padding: 0px 1px;
+            /* width: 18px;  */
+            justify-content: flex-end;
+            height: 18px; 
+            border-radius: 10px;
+            align-items: center;
+            -webkit-user-drag: none;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .appleItemDiv {
+            justify-content: flex-end;
+            padding: 0px 5px;
+            height: 18px;
+            background: transparent;
+            transition: all 0.35s;
+            align-items: center;
+            -webkit-user-drag: none;
+        }
+
+        .bar_right {
+            margin-left: auto;
+            padding: 0px 10px;
         }
     </style>
     <!--获取当前时间-->
@@ -179,8 +216,8 @@
     </script>
 </head>
  
-<body background="https://t.mwm.moe/ys" style="background-size:cover;">
-    <header id="topbar" style="animation: 0.2s ease-in-out 0s 1 normal forwards running opacityBegin; color: rgb(0, 0, 0); text-shadow: none;"> <!-- Finder Bar -->
+<body background="https://t.mwm.moe/ys" style="background-size: cover; background-position: 0 0; ">
+    <header id="topbar"> <!-- Finder Bar -->
         <div id="topbar-inner" class="bar">
             <img src="icons/Apple.png" alt="icon" class="apple_logo">
             <div class="bar_div"></div>
@@ -197,6 +234,27 @@
             <div class="bar_p">Window</div>
             <div class="bar_div"></div>
             <div class="bar_p">Help</div>
+            <div class="bar_right"></div>
+            <div class="appleItem">
+                <img src="icons/battery.png" alt="icon" class="appleItem">
+            </div>
+            <div class="appleItemDiv"></div>
+            <div class="appleItem">
+                <img src="icons/wifi.png" alt="icon" class="appleItem">
+            </div>
+            <div class="appleItemDiv"></div>
+            <div class="appleItem">
+                <img src="icons/search.png" alt="icon" class="appleItem">
+            </div>
+            <div class="appleItemDiv"></div>
+            <div class="appleItem">
+                <img src="icons/info.png" alt="icon" class="appleItem">
+            </div>
+            <div class="appleItemDiv"></div>
+            <div class="appleItem">
+                <img src="icons/siri.png" alt="icon" class="appleItem">
+            </div>
+            
             <!--显示当前时间-->
             <!--运行getD1()函数-->
             <div id="div" style="width: auto; height: auto; font-size: 15px; color: black;"></div>
