@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src *;
-    img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'unsafe-inline' *">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'wasm-unsafe-eval'; object-src 'self';">
     <title>启航</title>
     <!-- 引入图标 -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="css/main.css" once="nonce-xyz123">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body background="https://t.mwm.moe/ys" style="background-size: cover; background-position: 0 0; ">
@@ -41,7 +40,7 @@
             </div>
             <div class="appleItemDiv"></div>
             <div class="appleItem">
-                <a href="https://global.bing.com"><img src="icons/search.png" alt="icon" class="appleItem appleItemSizeDefault"></a>
+                <a href="./search.html"><img src="icons/search.png" alt="icon" class="appleItem appleItemSizeDefault"></a>
             </div>
             <div class="appleItemDiv"></div>
             <div class="appleItem">
