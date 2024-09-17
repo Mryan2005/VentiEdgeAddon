@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			form{
+                text-align: center;
+            }
+			form .text {
+				display: inline-block;
+				border: 0;
+				width: 260px;
+				height: 35px;
+				font-size: 14px;
+				outline: none;
+				border: 2px solid #01af63;
+			}
+			
+			form .search {
+				
+				width: 90px;
+				height: 38px;
+				border: 2px solid #01af63;
+				outline: none;
+				cursor: pointer;
+				/*   cursor: pointer;   鼠标悬停或点击时button时鼠标变成其他图标  */
+				text-align: center;
+				background-color: #01af63;
+				color: #FFFFFF;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Bing搜索 -->
+        <form action="https://www.bing.com/search" method="get">
+            <input type="search" name="q" placeholder="在Bing上搜索...">
+            <input type="submit" value="Bing搜索">
+        </form>
+
+        <!-- 百度搜索 -->
+        <form action="https://www.baidu.com/s" method="get">
+            <input type="search" name="wd" placeholder="在百度上搜索...">
+            <input type="submit" value="百度搜索">
+        </form>
+	</body>
+</html>
