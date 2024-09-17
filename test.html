@@ -1,25 +1,31 @@
-<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>实时显示系统时间C</title>
-<script>
-    var i=0;
-    function myDate(){
-        var now=new Date();
-        var year=now.getFullYear();
-        var month=now.getMonth()+1;
-        var day=now.getDate();
-        var hours=now.getHours();
-        var minutes=now.getMinutes();
-        var seconds=now.getSeconds();
- 
-        document.getElementById("div").innerHTML=year+"年"+month+"月"+day+"日"+hours+"："+minutes+"："+seconds;
+  <body>
+    <div>
+      全屏显示案例
+      <button id="full-screen-btn">进入全屏</button>
+    </div>
+  </body>
+  <script>
+    const html = document.querySelector('html');
+    const fullScreenBtn = document.getElementById('full-screen-btn');
+    fullScreenBtn.onclick = () => {
+      html.requestFullscreen()
+        .then(() => {
+          console.log('进入全屏成功');
+        })
+        .catch(() => {
+          console.log('进入全屏失败');
+        })
     }
-    setInterval(myDate,1000);
-</script>
-</head>
-<body>
-<div id="div"></div>
-</body>
-</html>
+
+    // 不在文档内的内容全屏
+    const el = document.createElement('div');
+    el.requestFullscreen()
+      .then(() => {
+        console.log('全屏成功');
+      })
+      .catch(() => {
+        console.log('全屏失败');
+      });
+  </script>
+<html>
