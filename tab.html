@@ -166,16 +166,12 @@
             border-radius: 10px;
         }
 
-        .mid {
-            padding: 0px 20%;
-        }
-
         .appleItem {
             display: inline-block;
-            padding: 0px 1px;
-            /* width: 18px;  */
+            padding: 0px 0px;
+            width: auto;
             justify-content: flex-end;
-            height: 18px; 
+            height: 16px; 
             border-radius: 10px;
             align-items: center;
             -webkit-user-drag: none;
@@ -185,16 +181,21 @@
 
         .appleItemDiv {
             justify-content: flex-end;
-            padding: 0px 5px;
-            height: 18px;
+            padding: 0px 7px;
+            height: 16px;
             background: transparent;
             transition: all 0.35s;
             align-items: center;
             -webkit-user-drag: none;
         }
 
+        .appleItemSiri {
+            width: 16px;
+        }
+
         .bar_right {
             margin-left: auto;
+            align-items: center;
             padding: 0px 10px;
         }
     </style>
@@ -251,8 +252,8 @@
                 <img src="icons/info.png" alt="icon" class="appleItem">
             </div>
             <div class="appleItemDiv"></div>
-            <div class="appleItem">
-                <img src="icons/siri.png" alt="icon" class="appleItem">
+            <div class="appleItem appleItemSiri">
+                <img src="icons/siri.webp" alt="icon" class="appleItem appleItemSiri">
             </div>
             
             <!--显示当前时间-->
