@@ -169,15 +169,29 @@
         .appleItem {
             display: inline-block;
             padding: 0px 0px;
-            width: 20px;
             width: auto;
             justify-content: flex-end;
-            height: 20px; 
-            border-radius: 10px;
             align-items: center;
             -webkit-user-drag: none;
             cursor: pointer;
             user-select: none;
+        }
+
+        .appleItemSiri {
+            padding: 1px 0px 0px;
+            width: 18px;
+            height: 18px;
+        }
+
+        .appleItemSizeDefault {
+            width: 20px;
+            height: 20px;
+        }
+
+        .appleItemBattery {
+            padding: 1px 0px 0px;
+            width: 22px;
+            height: 14px; 
         }
 
         .appleItemDiv {
@@ -234,23 +248,23 @@
             <div class="bar_p">Help</div>
             <div class="bar_right"></div>
             <div class="appleItem">
-                <img src="icons/battery.png" alt="icon" class="appleItem">
+                <img src="icons/battery.png" alt="icon" class="appleItem appleItemBattery">
             </div>
             <div class="appleItemDiv"></div>
             <div class="appleItem">
-                <img src="icons/wifi.png" alt="icon" class="appleItem">
+                <img src="icons/wifi.png" alt="icon" class="appleItem appleItemSizeDefault">
             </div>
             <div class="appleItemDiv"></div>
             <div class="appleItem">
-                <a href="https://global.bing.com"><img src="icons/search.png" alt="icon" class="appleItem"></a>
+                <a href="https://global.bing.com"><img src="icons/search.png" alt="icon" class="appleItem appleItemSizeDefault"></a>
             </div>
             <div class="appleItemDiv"></div>
             <div class="appleItem">
-                <img src="icons/info.png" alt="icon" class="appleItem">
+                <img src="icons/info.png" alt="icon" class="appleItem appleItemSizeDefault">
             </div>
             <div class="appleItemDiv"></div>
-            <div class="appleItem appleItemSiri">
-                <img src="icons/siri.webp" alt="icon" class="appleItem">
+            <div class="appleItem">
+                <img src="icons/siri.webp" alt="icon" class="appleItem appleItemSiri">
             </div>
             
             <!--显示当前时间-->
