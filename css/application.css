@@ -1,0 +1,38 @@
+.app {
+    --scale: 1;
+    padding-bottom: calc((var(--scale) * 50px) - (50px / var(--scale)));
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    transition: all 0.35s;
+}
+
+.appMenu {
+    padding: 0px 10px;
+    width: calc(50px * var(--scale));
+    height: calc(50px * var(--scale));
+    /* background: rgba(229, 229, 229, 0.95); */
+    border-radius: 11.13px;
+    /* border-radius: calc(10px * var(--scale)); */
+    transition: all 0.35s;
+    cursor: pointer;
+    user-select: none;
+}
+
+.appMenu a {
+    -webkit-user-drag: none;
+}
+
+.appMenu a img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    -webkit-user-drag: none;
+}
+
+.appMenu img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    -webkit-user-drag: none;
+}
