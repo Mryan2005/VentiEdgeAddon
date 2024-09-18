@@ -7,6 +7,13 @@
     transition: all 0.35s;
 }
 
+.backgoundGlass {
+    background: rgba(255, 255, 255, 0.24);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 0.519481px solid rgba(255, 255, 255, 0.18);
+} 
+
 .appMenu {
     padding: 0px 10px;
     width: calc(50px * var(--scale));
@@ -26,7 +33,7 @@
 .appMenu a img {
     width: 50px;
     height: 50px;
-    border-radius: 10px;
+    border-radius: 11.13px;
     -webkit-user-drag: none;
 }
 
