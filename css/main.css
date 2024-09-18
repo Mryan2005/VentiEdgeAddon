@@ -3,6 +3,10 @@ body {
     padding: 0;
 }
 
+.backgroundImage {
+    background-size: cover; 
+}
+
 .container {
     margin: auto;
     padding: 15px;
