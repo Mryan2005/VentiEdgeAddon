@@ -2,7 +2,7 @@
     position: absolute;
     top: 10px;
     left: 10px;
-    padding: 10px;
+    padding: 0px;
     cursor: pointer;
     user-select: none;
     z-index: 1000;
@@ -15,8 +15,9 @@
 .app {
     position: relative;
     top: 40px;
+    padding: 30px 35px;
     --scale: 1;
-    padding-bottom: calc((var(--scale) * 50px) - (50px / var(--scale)));
+    padding-bottom: calc((var(--scale) * 80px) - (80px / var(--scale)));
     height: 100%;
     display: flex;
     align-items: flex-end;
@@ -37,9 +38,9 @@
 } 
 
 .appMenu {
-    padding: 0px 10px;
-    width: calc(50px * var(--scale));
-    height: calc(50px * var(--scale));
+    padding: 0px 20px;
+    width: calc(80px * var(--scale));
+    height: calc(80px * var(--scale));
     /* background: rgba(229, 229, 229, 0.95); */
     border-radius: 11.13px;
     /* border-radius: calc(10px * var(--scale)); */
@@ -53,15 +54,15 @@
 }
 
 .appMenu a img {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     border-radius: 11.13px;
     -webkit-user-drag: none;
 }
 
 .appMenu img {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     border-radius: 11.13px;
     -webkit-user-drag: none;
 }
