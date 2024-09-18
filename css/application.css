@@ -1,4 +1,16 @@
+.goBack {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 1000;
+}
+
 .app {
+    position: relative;
+    top: 40px;
     --scale: 1;
     padding-bottom: calc((var(--scale) * 50px) - (50px / var(--scale)));
     height: 100%;
@@ -8,9 +20,15 @@
 }
 
 .backgoundGlass {
-    background: rgba(255, 255, 255, 0.24);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    position: fixed;
+    background-size: cover; 
+    background-position: 0 0; 
+    left: 0;
+    top: 0;
+    height: 200%;
+    width: 200%;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
     border: 0.519481px solid rgba(255, 255, 255, 0.18);
 } 
 
