@@ -3,9 +3,8 @@
  
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'wasm-unsafe-eval'; object-src 'self';">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval';">
     <title>启航</title>
     <!-- 引入图标 -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -32,7 +31,7 @@
             <div class="bar_p">Help</div>
             <div class="bar_right"></div>
             <div class="appleItem">
-                <img src="icons/battery.png" alt="icon" class="appleItem appleItemBattery">
+                <a href="javascript:void(0)" onclick="alert('test')"><img src="icons/battery.png" alt="icon" class="appleItem appleItemBattery"></a>
             </div>
             <div class="appleItemDiv"></div>
             <div class="appleItem">
@@ -40,11 +39,11 @@
             </div>
             <div class="appleItemDiv"></div>
             <div class="appleItem">
-                <a href="./search.html"><img src="icons/search.png" alt="icon" class="appleItem appleItemSizeDefault"></a>
+                <a href="./search.html"><img src="icons/search.png" alt="icon" class="appleItem appleItemSearch"></a>
             </div>
             <div class="appleItemDiv"></div>
             <div class="appleItem">
-                <img src="icons/info.png" alt="icon" class="appleItem appleItemSizeDefault">
+                <img src="icons/info.png" alt="icon" class="appleItem appleItemInfo">
             </div>
             <div class="appleItemDiv"></div>
             <div class="appleItem">
