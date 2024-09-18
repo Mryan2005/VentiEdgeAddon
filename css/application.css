@@ -15,7 +15,7 @@
 .app {
     position: relative;
     left: 1%;
-    padding: 45px 14.2857%;
+    padding: 45px 14%;
     --scale: 1;
     padding-bottom: calc((var(--scale) * 80px) - (80px / var(--scale)));
     height: 100%;
