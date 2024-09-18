@@ -14,8 +14,8 @@
 
 .app {
     position: relative;
-    top: 40px;
-    padding: 30px 35px;
+    left: 1%;
+    padding: 45px 14.2857%;
     --scale: 1;
     padding-bottom: calc((var(--scale) * 80px) - (80px / var(--scale)));
     height: 100%;
@@ -39,6 +39,7 @@
 
 .appMenu {
     padding: 0px 20px;
+    flex-direction: column;
     width: calc(80px * var(--scale));
     height: calc(80px * var(--scale));
     /* background: rgba(229, 229, 229, 0.95); */
