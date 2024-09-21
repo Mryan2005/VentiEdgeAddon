@@ -19,6 +19,21 @@ function getTime() {
     var hour = time.getHours();
     var minute = time.getMinutes();
     var second = time.getSeconds();
+    if(month < 10) {
+        month = '0' + month;
+    }
+    if(date < 10) {
+        date = '0' + date;
+    }
+    if(hour < 10) {
+        hour = '0' + hour;
+    }
+    if(minute < 10) {
+        minute = '0' + minute;
+    }
+    if(second < 10) {
+        second = '0' + second;
+    }
     var timeString = year + '年' + month + '月' + date + '日 ' + hour + ':' + minute + ':' + second;
     document.getElementById('appleTime').innerHTML = timeString;
 }
