@@ -2,7 +2,7 @@
 
 ## Introduction
 
-[中文版](./readme_zh.md) | Current version
+[中文版](./readme_zh.md) | English [Current version]
 
 This is a new tab extension for Edge browser, which is based on the character Venti from Genshin Impact and MacOS Big Sur.
 
