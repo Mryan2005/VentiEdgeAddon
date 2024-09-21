@@ -62,3 +62,11 @@ document.getElementById('closeSearchWindow').addEventListener('click', (event) =
 document.getElementById('appleSearch').addEventListener('click', (event) => {
     document.getElementById('searchWindow').style.display = 'block';
 });
+
+document.getElementById('closeDeepLWindow').addEventListener('click', (event) => {
+    document.getElementById('deepLWindow').style.display = 'none';
+});
+
+document.getElementById('deepLWindowButton').addEventListener('click', (event) => {
+    document.getElementById('deepLWindow').style.display = 'block';
+});
