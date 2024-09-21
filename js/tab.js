@@ -11,13 +11,23 @@ document.getElementById('body1').addEventListener('click', (event) => {
     }
 });
 
-window.addEventListener('load', (event) => {
+function getTime() {
     var time = new Date();
     var year = time.getFullYear();
     var month = time.getMonth() + 1;
     var date = time.getDate();
     var hour = time.getHours();
     var minute = time.getMinutes();
-    var timeString = year + '年' + month + '月' + date + '日 ' + hour + ':' + minute;
+    var second = time.getSeconds();
+    var timeString = year + '年' + month + '月' + date + '日 ' + hour + ':' + minute + ':' + second;
     document.getElementById('appleTime').innerHTML = timeString;
+}
+
+// document.getElementById('appleTime').addEventListener('click', (event) => {
+//     document.getElementById('appleTime').innerHTML = 'Apple';
+// });
+
+window.addEventListener('load', (event) => {
+    getTime();
+    setInterval(getTime, 1000);
 });
