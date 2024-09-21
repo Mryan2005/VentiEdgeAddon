@@ -13,6 +13,29 @@
 </head>
 
 <body id="body1" background="https://t.mwm.moe/ys" class="backgroundImage">
+    <!-- some Windows -->
+    <div id="windows">
+        <div id="aboutWindow" class="window">
+            <div class="window-header">
+                <div class="window-title">关于</div>
+                <div class="window-close-button" id="closeAboutWindow">
+                    <p style="left: 0; top: 0;">x</p>
+                </div>
+            </div>
+            <div class="window-content">
+                <p>作品名：Venti Edge Addon</p>
+                <p>作者：Mryan2005</p>
+                <p>版本：1.0</p>
+            </div>
+        </div>
+        <div id="searchWindow" class="window">
+            <div class="window-close-button" id="closeSearchWindow">
+                <p style="left: 0; top: 0;">x</p>
+            </div>
+            <iframe src="./search.html" frameborder="0" class="window-content"></iframe>
+        </div>
+    </div>
+    
     <header id="topbar"> <!-- Finder Bar -->
         <div id="topbar-inner" class="bar">
             <img src="icons/Apple.png" alt="icon" class="apple_logo">
@@ -40,7 +63,7 @@
             </div>
             <div class="appleItemDiv"></div>
             <div class="appleItem">
-                <a href="./search.html"><img src="icons/search.png" alt="icon" class="appleItem appleItemSearch"></a>
+                <img src="icons/search.png" alt="icon" class="appleItem appleItemSearch" id="appleSearch"></a>
             </div>
             <div class="appleItemDiv"></div>
             <div class="appleItem">
@@ -126,7 +149,7 @@
         </div>
         <div class="item">
             <div class="menu">
-                <a href="https://github.com/Mryan2005/VentiEdgeAddon"><img src="icons/icon128x128.png" alt="icon"></a>
+                <img src="icons/icon128x128.png" alt="icon" id="about">
             </div>
         </div>
     </div>

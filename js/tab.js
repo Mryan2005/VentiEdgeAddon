@@ -46,3 +46,19 @@ window.addEventListener('load', (event) => {
     getTime();
     setInterval(getTime, 1000);
 });
+
+document.getElementById('about').addEventListener('click', (event) => {
+    document.getElementById('aboutWindow').style.display = 'block';
+});
+
+document.getElementById('closeAboutWindow').addEventListener('click', (event) => {
+    document.getElementById('aboutWindow').style.display = 'none';
+});
+
+document.getElementById('closeSearchWindow').addEventListener('click', (event) => {
+    document.getElementById('searchWindow').style.display = 'none';
+});
+
+document.getElementById('appleSearch').addEventListener('click', (event) => {
+    document.getElementById('searchWindow').style.display = 'block';
+});
