@@ -124,6 +124,18 @@ header {
     justify-content: flex-start;
 }
 
+.appleDivBar {
+    padding: 0px 0px 0.5px;
+    height: 16px;
+    border-left: 1px solid black;
+}
+
+.appleDivBar {
+    padding: 0px 0px 0px;
+    width: 16px;
+    height: 16px;
+}
+
 .bar_p {
     height: 16px;
     font-size: 13px;
@@ -168,6 +180,12 @@ header {
     -webkit-user-drag: none;
     cursor: pointer;
     user-select: none;
+}
+
+.appleItemTime {
+    font-size: 13px;
+    padding: 0px 0px 0.5px;
+    height: 16px;
 }
 
 .appleItemSiri {
