@@ -49,24 +49,34 @@ window.addEventListener('load', (event) => {
 
 document.getElementById('about').addEventListener('click', (event) => {
     document.getElementById('aboutWindow').style.display = 'block';
+    document.getElementById('barTitle').innerHTML = 'About';
 });
 
 document.getElementById('closeAboutWindow').addEventListener('click', (event) => {
     document.getElementById('aboutWindow').style.display = 'none';
+    document.getElementById('barTitle').innerHTML = 'Finder';
 });
 
 document.getElementById('closeSearchWindow').addEventListener('click', (event) => {
     document.getElementById('searchWindow').style.display = 'none';
+    document.getElementById('barTitle').innerHTML = 'Finder';
 });
 
 document.getElementById('appleSearch').addEventListener('click', (event) => {
     document.getElementById('searchWindow').style.display = 'block';
+    document.getElementById('barTitle').innerHTML = 'Search';
 });
 
 document.getElementById('closeDeepLWindow').addEventListener('click', (event) => {
     document.getElementById('deepLWindow').style.display = 'none';
+    document.getElementById('barTitle').innerHTML = 'Finder';
 });
 
 document.getElementById('deepLWindowButton').addEventListener('click', (event) => {
     document.getElementById('deepLWindow').style.display = 'block';
+    document.getElementById('barTitle').innerHTML = 'DeepL';
+});
+
+document.getElementById('deepLWindow').addEventListener('load', (event) => {
+    window.open('https://www.deepl.com/translator', '_self');
 });
