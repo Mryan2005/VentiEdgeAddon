@@ -9,6 +9,49 @@ body {
     height: 100%;
 }
 
+.app {
+    position: relative;
+    left: 0%;
+    padding: 0px 14%;
+    --scale: 1;
+    padding-bottom: calc((var(--scale) * 80px) - (80px / var(--scale)));
+    height: 20%;
+    display: flex;
+    align-items: flex-end;
+    transition: all 0.35s;
+}
+
+.appMenu a {
+    -webkit-user-drag: none;
+}
+
+.appMenu a img {
+    width: 80px;
+    height: 80px;
+    border-radius: 11.13px;
+    -webkit-user-drag: none;
+}
+
+.appMenu img {
+    width: 80px;
+    height: 80px;
+    border-radius: 11.13px;
+    -webkit-user-drag: none;
+}
+
+.appMenu {
+    padding: 0px 20px;
+    flex-direction: column;
+    width: calc(80px * var(--scale));
+    height: calc(80px * var(--scale));
+    /* background: rgba(229, 229, 229, 0.95); */
+    border-radius: 11.13px;
+    /* border-radius: calc(10px * var(--scale)); */
+    transition: all 0.35s;
+    cursor: pointer;
+    user-select: none;
+}
+
 .container {
     margin: auto;
     padding: 15px;
@@ -189,12 +232,49 @@ header {
 
 .window-close-button {
     display: block;
+    position: absolute;
     padding: 0px 0px;
+    left: 7px;
+    top: 7px;
     width: 16px;
     height: 16px;
     align-items: center;
     background: #FF5D5B;
     border: 1px solid #CF544D;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.window-max-button {
+    display: block;
+    position: absolute;
+    padding: 0px 0px;
+    left: 30px;
+    top: 7px;
+    width: 16px;
+    height: 16px;
+    align-items: center;
+    background: #ffe100;
+    border: 1px solid #ffcc00;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.window-min-button {
+    display: block;
+    position: absolute;
+    padding: 0px 0px;
+    left: 53px;
+    top: 7px;
+    width: 16px;
+    height: 16px;
+    align-items: center;
+    background: #0eaf05;
+    border: 1px solid #00bb51;
     border-radius: 50%;
     cursor: pointer;
     user-select: none;
@@ -207,10 +287,19 @@ header {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 50%;
-    height: 50%;
-    background-color: #fff;
+    width: 70%;
+    height: 60%;
     border: 1px solid #ccc;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.24);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 0.519481px solid rgba(255, 255, 255, 0.18);
+    box-shadow: rgba(142, 142, 142, 0.19) 0px 6px 15px 0px;
+    -webkit-box-shadow: rgba(142, 142, 142, 0.19) 0px 6px 15px 0px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 18px;
     padding: 20px;
     z-index: 9999;
 }
@@ -228,7 +317,6 @@ header {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 10px;
-    border-bottom: 1px solid #ccc;
 }
 
 .appleItemTime {
