@@ -119,3 +119,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     });
 });
+
+document.getElementById('aboutWindowHeader').addEventListener('mousedown', function() {
+    document.getElementById('aboutWindowHeader').addEventListener('mousemove', function(e) {
+        var x = e.clientX;
+        var y = e.clientY;
+        document.getElementById('aboutWindowHeader').style.left = x + 'px';
+        document.getElementById('aboutWindowHeader').style.top = y + 'px';
+    });
+    document.getElementById('aboutWindowHeader').addEventListener('mouseup', function() {
+        document.getElementById('aboutWindowHeader').removeEventListener('mousemove', function(e) {
+            var x = e.clientX;
+            var y = e.clientY;
+            document.getElementById('aboutWindowHeader').style.left = x + 'px';
+            document.getElementById('aboutWindowHeader').style.top = y + 'px';
+        });
+    });
+});
