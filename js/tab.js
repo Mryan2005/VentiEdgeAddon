@@ -180,10 +180,12 @@ document.getElementById('aboutWindowHeader').addEventListener('mousedown', funct
 });
 
 document.getElementById('applications').addEventListener('mousedown', function() {
-    document.getElementById('applications').style.display = '';
-    document.getElementById('topbar').style = topbarStyle;
-    document.getElementById('container').style = containerStyle;
-    document.getElementById('searchWindow').style.display = searchWindowShowStatus;
-    document.getElementById('aboutWindow').style.display = aboutWindowShowStatus;
-    stack.pop();
+    setTimeout(() => {
+        document.getElementById('applications').style.display = '';
+        document.getElementById('topbar').style = topbarStyle;
+        document.getElementById('container').style = containerStyle;
+        document.getElementById('searchWindow').style.display = searchWindowShowStatus;
+        document.getElementById('aboutWindow').style.display = aboutWindowShowStatus;
+        stack.pop();
+    }, 3000);
 });
