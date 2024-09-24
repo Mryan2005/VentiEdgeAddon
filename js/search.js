@@ -11,3 +11,10 @@ document.getElementById('searchBtn').addEventListener('click', (event) => {
     var searchUrl = searchUrl + searchWord;
     window.open(searchUrl, '_blank');
 });
+
+// press enter to search
+document.getElementById('searchWord').addEventListener('keypress', function(event) {
+    if(event.key === 'Enter') {
+        document.getElementById('searchBtn').click();
+    }
+});
