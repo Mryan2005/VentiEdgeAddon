@@ -188,16 +188,20 @@ document.getElementById("maxSearchWindow").addEventListener("click", (event) => 
         document.getElementById("searchWindow").style.top = "50%";
         document.getElementById("searchWindow").style.width = "70%";
         document.getElementById("searchWindow").style.height = "60%";
+        document.getElementById("searchWindow").style.alignContent = "";
+        document.getElementById("searchWindow").style.position = "fixed";
         document.getElementById("searchWindow").style.border = "1px solid #ccc";
+        document.getElementById("searchWindow").style.borderRadius = "10px";
     } else {
         searchWindowMaxStatus = true;
-        document.getElementById("searchWindow").style.width = "96.91%";
-        document.getElementById("searchWindow").style.height = "90.3%";
+        document.getElementById("searchWindow").style.width = innerWidth||document.documentElement.clientWidth||document.body.clientWidth;
+        document.getElementById("searchWindow").style.height = innerHeight||document.documentElement.clientHeight||document.body.clientHeight;
         document.getElementById("searchWindow").style.border = "none";
         document.getElementById("searchWindow").style.borderRadius = "0";
         document.getElementById("searchWindow").style.position = "absolute";
         document.getElementById("searchWindow").style.alignContent = "";
         document.getElementById("searchWindow").style.top = "52%";
+        document.getElementById("searchWindow").style.left = "";
     }
 });
 
