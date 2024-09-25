@@ -249,5 +249,5 @@ document.getElementById('applications').addEventListener('mousedown', function()
         document.getElementById('searchWindow').style.display = searchWindowShowStatus;
         document.getElementById('aboutWindow').style.display = aboutWindowShowStatus;
         stack.pop();
-    }, 3000);
+    }, 100);
 });
