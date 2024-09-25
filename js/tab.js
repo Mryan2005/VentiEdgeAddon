@@ -136,7 +136,69 @@ document.getElementById('launchpad').addEventListener('click', (event) => {
     document.getElementById('aboutWindow').style.display = '';
 });
 
+document.getElementById("closeAboutWindow").addEventListener("mouseenter", (event) => {
+    document.getElementById("closeAboutWindow").style.background = "#FF5D5B";
+    document.getElementById("closeAboutWindow").style.border = "1px solid #CF544D";
+});
+document.getElementById("closeAboutWindow").addEventListener("mouseleave", (event) => {
+    document.getElementById("closeAboutWindow").style.background = "#bababa";
+    document.getElementById("closeAboutWindow").style.border = "1px solid #bababa";
+});
+document.getElementById("maxAboutWindow").addEventListener("mouseenter", (event) => {
+    document.getElementById("maxAboutWindow").style.background = "#ffe100";
+    document.getElementById("maxAboutWindow").style.border = "1px solid #ffcc00";
+});
+document.getElementById("maxAboutWindow").addEventListener("mouseleave", (event) => {
+    document.getElementById("maxAboutWindow").style.background = "#bababa";
+    document.getElementById("maxAboutWindow").style.border = "1px solid #bababa";
+});
+document.getElementById("minAboutWindow").addEventListener("mouseenter", (event) => {
+    document.getElementById("minAboutWindow").style.background = "#0eaf05";
+    document.getElementById("minAboutWindow").style.border = "1px solid #00bb51";
+});
+document.getElementById("minAboutWindow").addEventListener("mouseleave", (event) => {
+    document.getElementById("minAboutWindow").style.background = "#bababa";
+    document.getElementById("minAboutWindow").style.border = "1px solid #bababa";
+});
+
+document.getElementById("closeSearchWindow").addEventListener("mouseenter", (event) => {
+    document.getElementById("closeSearchWindow").style.background = "#FF5D5B";
+    document.getElementById("closeSearchWindow").style.border = "1px solid #CF544D";
+});
+document.getElementById("closeSearchWindow").addEventListener("mouseleave", (event) => {
+    document.getElementById("closeSearchWindow").style.background = "#bababa";
+    document.getElementById("closeSearchWindow").style.border = "1px solid #bababa";
+});
+document.getElementById("maxSearchWindow").addEventListener("mouseenter", (event) => {
+    document.getElementById("maxSearchWindow").style.background = "#ffe100";
+    document.getElementById("maxSearchWindow").style.border = "1px solid #ffcc00";
+});
+document.getElementById("maxSearchWindow").addEventListener("mouseleave", (event) => {
+    document.getElementById("maxSearchWindow").style.background = "#bababa";
+    document.getElementById("maxSearchWindow").style.border = "1px solid #bababa";
+});
+document.getElementById("minSearchWindow").addEventListener("mouseenter", (event) => {
+    document.getElementById("minSearchWindow").style.background = "#0eaf05";
+    document.getElementById("minSearchWindow").style.border = "1px solid #00bb51";
+});
+document.getElementById("minSearchWindow").addEventListener("mouseleave", (event) => {
+    document.getElementById("minSearchWindow").style.background = "#bababa";
+    document.getElementById("minSearchWindow").style.border = "1px solid #bababa";
+});
+
 document.addEventListener('DOMContentLoaded', (event) => {
+    document.getElementById("closeAboutWindow").style.background = "#bababa";
+    document.getElementById("closeAboutWindow").style.border = "1px solid #bababa";
+    document.getElementById("closeSearchWindow").style.background = "#bababa";
+    document.getElementById("closeSearchWindow").style.border = "1px solid #bababa";
+    document.getElementById("maxAboutWindow").style.background = "#bababa";
+    document.getElementById("maxAboutWindow").style.border = "1px solid #bababa";
+    document.getElementById("maxSearchWindow").style.background = "#bababa";
+    document.getElementById("maxSearchWindow").style.border = "1px solid #bababa";
+    document.getElementById("minSearchWindow").style.background = "#bababa";
+    document.getElementById("minSearchWindow").style.border = "1px solid #bababa";
+    document.getElementById("minAboutWindow").style.background = "#bababa";
+    document.getElementById("minAboutWindow").style.border = "1px solid #bababa";
     navigator.keyboard.lock(['Escape']);
     document.addEventListener('keydown', function(e) {
         // console.log(`键名: ${e.key}, 键码: ${e.code}`);

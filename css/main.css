@@ -234,8 +234,8 @@ header {
     display: block;
     position: absolute;
     padding: 0px 0px;
-    left: 7px;
-    top: 7px;
+    left: 12px;
+    top: 9px;
     width: 16px;
     height: 16px;
     align-items: center;
@@ -251,8 +251,8 @@ header {
     display: block;
     position: absolute;
     padding: 0px 0px;
-    left: 30px;
-    top: 7px;
+    left: 35px;
+    top: 9px;
     width: 16px;
     height: 16px;
     align-items: center;
@@ -268,8 +268,8 @@ header {
     display: block;
     position: absolute;
     padding: 0px 0px;
-    left: 53px;
-    top: 7px;
+    left: 58px;
+    top: 9px;
     width: 16px;
     height: 16px;
     align-items: center;
@@ -360,6 +360,7 @@ header {
     background: transparent;
     transition: all 0.35s;
     align-items: center;
+    user-select: none;
     -webkit-user-drag: none;
 }
 
@@ -379,4 +380,17 @@ header {
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
     border: 0.519481px solid rgba(255, 255, 255, 0.18);
+}
+
+.windowTitle {
+    position: absolute;
+    display: block;
+    align-items: center;
+    left: 45%;
+    top: 8.9px;
+    height: 16px;
+    font-weight: 700;
+    font-size: 13px;
+    user-select: none;
+    -webkit-user-drag: none;
 }

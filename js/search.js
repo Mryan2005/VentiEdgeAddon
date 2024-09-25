@@ -18,3 +18,4 @@ document.getElementById('searchWord').addEventListener('keypress', function(even
         document.getElementById('searchBtn').click();
     }
 });
+
