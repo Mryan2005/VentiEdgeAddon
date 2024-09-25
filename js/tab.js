@@ -1,4 +1,5 @@
 var stack = ["Finder"], stack2 = [];
+var searchWindowMaxStatus = false, aboutWindowMaxStatus = false;
 var containerStyle = document.getElementById('container').style;
 var topbarStyle = document.getElementById('topbar').style;
 var searchWindowShowStatus, aboutWindowShowStatus;
@@ -161,6 +162,7 @@ document.getElementById("minAboutWindow").addEventListener("mouseleave", (event)
     document.getElementById("minAboutWindow").style.border = "1px solid #bababa";
 });
 
+
 document.getElementById("closeSearchWindow").addEventListener("mouseenter", (event) => {
     document.getElementById("closeSearchWindow").style.background = "#FF5D5B";
     document.getElementById("closeSearchWindow").style.border = "1px solid #CF544D";
@@ -169,6 +171,8 @@ document.getElementById("closeSearchWindow").addEventListener("mouseleave", (eve
     document.getElementById("closeSearchWindow").style.background = "#bababa";
     document.getElementById("closeSearchWindow").style.border = "1px solid #bababa";
 });
+
+
 document.getElementById("maxSearchWindow").addEventListener("mouseenter", (event) => {
     document.getElementById("maxSearchWindow").style.background = "#ffe100";
     document.getElementById("maxSearchWindow").style.border = "1px solid #ffcc00";
@@ -177,6 +181,27 @@ document.getElementById("maxSearchWindow").addEventListener("mouseleave", (event
     document.getElementById("maxSearchWindow").style.background = "#bababa";
     document.getElementById("maxSearchWindow").style.border = "1px solid #bababa";
 });
+document.getElementById("maxSearchWindow").addEventListener("click", (event) => {
+    if(searchWindowMaxStatus) {
+        searchWindowMaxStatus = false;
+        document.getElementById("searchWindow").style.left = "50%";
+        document.getElementById("searchWindow").style.top = "50%";
+        document.getElementById("searchWindow").style.width = "70%";
+        document.getElementById("searchWindow").style.height = "60%";
+        document.getElementById("searchWindow").style.border = "1px solid #ccc";
+    } else {
+        searchWindowMaxStatus = true;
+        document.getElementById("searchWindow").style.width = "96.91%";
+        document.getElementById("searchWindow").style.height = "90.3%";
+        document.getElementById("searchWindow").style.border = "none";
+        document.getElementById("searchWindow").style.borderRadius = "0";
+        document.getElementById("searchWindow").style.position = "absolute";
+        document.getElementById("searchWindow").style.alignContent = "";
+        document.getElementById("searchWindow").style.top = "52%";
+    }
+});
+
+
 document.getElementById("minSearchWindow").addEventListener("mouseenter", (event) => {
     document.getElementById("minSearchWindow").style.background = "#0eaf05";
     document.getElementById("minSearchWindow").style.border = "1px solid #00bb51";
@@ -185,6 +210,7 @@ document.getElementById("minSearchWindow").addEventListener("mouseleave", (event
     document.getElementById("minSearchWindow").style.background = "#bababa";
     document.getElementById("minSearchWindow").style.border = "1px solid #bababa";
 });
+
 
 document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById("closeAboutWindow").style.background = "#bababa";
