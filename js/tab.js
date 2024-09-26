@@ -1,9 +1,11 @@
+// let some global variables be defined here
 var stack = ["Finder"], stack2 = [];
 var searchWindowMaxStatus = false, aboutWindowMaxStatus = false;
 var containerStyle = document.getElementById('container').style;
 var topbarStyle = document.getElementById('topbar').style;
 var searchWindowShowStatus, aboutWindowShowStatus;
 
+// function to renew the z-index of the window
 function renewZIndex(elem, i) {
     switch(elem) {
         case 'Search':
@@ -15,6 +17,7 @@ function renewZIndex(elem, i) {
     }
 }
 
+// function to request full screen
 document.getElementById('body1').addEventListener('click', (event) => {
     const element = document.documentElement; // 获取整个文档的元素
     if (element.requestFullscreen) { // 标准写法
@@ -28,6 +31,46 @@ document.getElementById('body1').addEventListener('click', (event) => {
     }
 });
 
+// DOMContentLoaded event
+document.addEventListener('DOMContentLoaded', (event) => {
+    document.getElementById("closeAboutWindow").style.background = "#bababa";
+    document.getElementById("closeAboutWindow").style.border = "1px solid #bababa";
+    document.getElementById("closeSearchWindow").style.background = "#bababa";
+    document.getElementById("closeSearchWindow").style.border = "1px solid #bababa";
+    document.getElementById("maxAboutWindow").style.background = "#bababa";
+    document.getElementById("maxAboutWindow").style.border = "1px solid #bababa";
+    document.getElementById("maxSearchWindow").style.background = "#bababa";
+    document.getElementById("maxSearchWindow").style.border = "1px solid #bababa";
+    document.getElementById("minSearchWindow").style.background = "#bababa";
+    document.getElementById("minSearchWindow").style.border = "1px solid #bababa";
+    document.getElementById("minAboutWindow").style.background = "#bababa";
+    document.getElementById("minAboutWindow").style.border = "1px solid #bababa";
+    navigator.keyboard.lock(['Escape']);
+    document.addEventListener('keydown', function(e) {
+        // console.log(`键名: ${e.key}, 键码: ${e.code}`);
+        if(e.key === 'Escape' && stack.length > 0) {
+            if(stack[stack.length - 1] === 'About') {
+                document.getElementById('aboutWindow').style.display = '';
+                stack.pop();
+            } else if(stack[stack.length - 1] === 'Search') {
+                document.getElementById('searchWindow').style.display = '';
+                stack.pop();
+            } else if(stack[stack.length - 1] === 'launchpad') {
+                document.getElementById('applications').style.display = '';
+                document.getElementById('topbar').style = topbarStyle;
+                document.getElementById('container').style = containerStyle;
+                document.getElementById('searchWindow').style.display = searchWindowShowStatus;
+                document.getElementById('aboutWindow').style.display = aboutWindowShowStatus;
+                stack.pop();
+            } else if(stack[stack.length - 1] === 'Finder') {
+                return;
+            }
+            document.getElementById('barTitle').innerHTML = stack[stack.length - 1];
+        }
+    });
+});
+
+// function to get the time and show it on the top bar
 function getTime() {
     var time = new Date();
     var year = time.getFullYear();
@@ -64,6 +107,7 @@ window.addEventListener('load', (event) => {
     setInterval(getTime, 1000);
 });
 
+// function to control the about window
 document.getElementById('about').addEventListener('click', (event) => {
     if(stack[stack.length - 1] === 'About') {
         return;
@@ -95,6 +139,55 @@ document.getElementById('closeAboutWindow').addEventListener('click', (event) =>
     document.getElementById('barTitle').innerHTML = 'Finder';
 });
 
+document.getElementById("closeAboutWindow").addEventListener("mouseenter", (event) => {
+    document.getElementById("closeAboutWindow").style.background = "#FF5D5B";
+    document.getElementById("closeAboutWindow").style.border = "1px solid #CF544D";
+});
+
+document.getElementById("closeAboutWindow").addEventListener("mouseleave", (event) => {
+    document.getElementById("closeAboutWindow").style.background = "#bababa";
+    document.getElementById("closeAboutWindow").style.border = "1px solid #bababa";
+});
+
+document.getElementById("maxAboutWindow").addEventListener("mouseenter", (event) => {
+    document.getElementById("maxAboutWindow").style.background = "#ffe100";
+    document.getElementById("maxAboutWindow").style.border = "1px solid #ffcc00";
+});
+
+document.getElementById("maxAboutWindow").addEventListener("mouseleave", (event) => {
+    document.getElementById("maxAboutWindow").style.background = "#bababa";
+    document.getElementById("maxAboutWindow").style.border = "1px solid #bababa";
+});
+
+document.getElementById("minAboutWindow").addEventListener("mouseenter", (event) => {
+    document.getElementById("minAboutWindow").style.background = "#0eaf05";
+    document.getElementById("minAboutWindow").style.border = "1px solid #00bb51";
+});
+
+document.getElementById("minAboutWindow").addEventListener("mouseleave", (event) => {
+    document.getElementById("minAboutWindow").style.background = "#bababa";
+    document.getElementById("minAboutWindow").style.border = "1px solid #bababa";
+});
+
+document.getElementById('aboutWindowHeader').addEventListener('mousedown', function() {
+    document.getElementById('aboutWindowHeader').addEventListener('mousemove', function(e) {
+        var x = e.clientX;
+        var y = e.clientY;
+        document.getElementById('aboutWindowHeader').style.left = x + 'px';
+        document.getElementById('aboutWindowHeader').style.top = y + 'px';
+    });
+    document.getElementById('aboutWindowHeader').addEventListener('mouseup', function() {
+        document.getElementById('aboutWindowHeader').removeEventListener('mousemove', function(e) {
+            var x = e.clientX;
+            var y = e.clientY;
+            document.getElementById('aboutWindowHeader').style.left = x + 'px';
+            document.getElementById('aboutWindowHeader').style.top = y + 'px';
+        });
+    });
+});
+
+
+// function to control the search window
 document.getElementById('closeSearchWindow').addEventListener('click', (event) => {
     stack.pop();
     document.getElementById('searchWindow').style.display = '';
@@ -125,43 +218,6 @@ document.getElementById('appleSearch').addEventListener('click', (event) => {
     }
     document.getElementById('barTitle').innerHTML = 'Search';
 });
-
-document.getElementById('launchpad').addEventListener('click', (event) => {
-    stack.push('launchpad');
-    searchWindowShowStatus = document.getElementById('searchWindow').style.display != 'none' ? document.getElementById('searchWindow').style.display : 'none';
-    aboutWindowShowStatus = document.getElementById('aboutWindow').style.display != 'none' ? document.getElementById('aboutWindow').style.display : 'none';
-    document.getElementById('applications').style.display = 'block';
-    document.getElementById('topbar').style.display = 'none';
-    document.getElementById('container').style.display = 'none';
-    document.getElementById('searchWindow').style.display = '';
-    document.getElementById('aboutWindow').style.display = '';
-});
-
-document.getElementById("closeAboutWindow").addEventListener("mouseenter", (event) => {
-    document.getElementById("closeAboutWindow").style.background = "#FF5D5B";
-    document.getElementById("closeAboutWindow").style.border = "1px solid #CF544D";
-});
-document.getElementById("closeAboutWindow").addEventListener("mouseleave", (event) => {
-    document.getElementById("closeAboutWindow").style.background = "#bababa";
-    document.getElementById("closeAboutWindow").style.border = "1px solid #bababa";
-});
-document.getElementById("maxAboutWindow").addEventListener("mouseenter", (event) => {
-    document.getElementById("maxAboutWindow").style.background = "#ffe100";
-    document.getElementById("maxAboutWindow").style.border = "1px solid #ffcc00";
-});
-document.getElementById("maxAboutWindow").addEventListener("mouseleave", (event) => {
-    document.getElementById("maxAboutWindow").style.background = "#bababa";
-    document.getElementById("maxAboutWindow").style.border = "1px solid #bababa";
-});
-document.getElementById("minAboutWindow").addEventListener("mouseenter", (event) => {
-    document.getElementById("minAboutWindow").style.background = "#0eaf05";
-    document.getElementById("minAboutWindow").style.border = "1px solid #00bb51";
-});
-document.getElementById("minAboutWindow").addEventListener("mouseleave", (event) => {
-    document.getElementById("minAboutWindow").style.background = "#bababa";
-    document.getElementById("minAboutWindow").style.border = "1px solid #bababa";
-});
-
 
 document.getElementById("closeSearchWindow").addEventListener("mouseenter", (event) => {
     document.getElementById("closeSearchWindow").style.background = "#FF5D5B";
@@ -215,62 +271,19 @@ document.getElementById("minSearchWindow").addEventListener("mouseleave", (event
     document.getElementById("minSearchWindow").style.border = "1px solid #bababa";
 });
 
-
-document.addEventListener('DOMContentLoaded', (event) => {
-    document.getElementById("closeAboutWindow").style.background = "#bababa";
-    document.getElementById("closeAboutWindow").style.border = "1px solid #bababa";
-    document.getElementById("closeSearchWindow").style.background = "#bababa";
-    document.getElementById("closeSearchWindow").style.border = "1px solid #bababa";
-    document.getElementById("maxAboutWindow").style.background = "#bababa";
-    document.getElementById("maxAboutWindow").style.border = "1px solid #bababa";
-    document.getElementById("maxSearchWindow").style.background = "#bababa";
-    document.getElementById("maxSearchWindow").style.border = "1px solid #bababa";
-    document.getElementById("minSearchWindow").style.background = "#bababa";
-    document.getElementById("minSearchWindow").style.border = "1px solid #bababa";
-    document.getElementById("minAboutWindow").style.background = "#bababa";
-    document.getElementById("minAboutWindow").style.border = "1px solid #bababa";
-    navigator.keyboard.lock(['Escape']);
-    document.addEventListener('keydown', function(e) {
-        // console.log(`键名: ${e.key}, 键码: ${e.code}`);
-        if(e.key === 'Escape' && stack.length > 0) {
-            if(stack[stack.length - 1] === 'About') {
-                document.getElementById('aboutWindow').style.display = '';
-                stack.pop();
-            } else if(stack[stack.length - 1] === 'Search') {
-                document.getElementById('searchWindow').style.display = '';
-                stack.pop();
-            } else if(stack[stack.length - 1] === 'launchpad') {
-                document.getElementById('applications').style.display = '';
-                document.getElementById('topbar').style = topbarStyle;
-                document.getElementById('container').style = containerStyle;
-                document.getElementById('searchWindow').style.display = searchWindowShowStatus;
-                document.getElementById('aboutWindow').style.display = aboutWindowShowStatus;
-                stack.pop();
-            } else if(stack[stack.length - 1] === 'Finder') {
-                return;
-            }
-            document.getElementById('barTitle').innerHTML = stack[stack.length - 1];
-        }
-    });
+// function to control the launchpad
+document.getElementById('launchpad').addEventListener('click', (event) => {
+    stack.push('launchpad');
+    searchWindowShowStatus = document.getElementById('searchWindow').style.display != 'none' ? document.getElementById('searchWindow').style.display : 'none';
+    aboutWindowShowStatus = document.getElementById('aboutWindow').style.display != 'none' ? document.getElementById('aboutWindow').style.display : 'none';
+    document.getElementById('applications').style.display = 'block';
+    document.getElementById('topbar').style.display = 'none';
+    document.getElementById('container').style.display = 'none';
+    document.getElementById('searchWindow').style.display = '';
+    document.getElementById('aboutWindow').style.display = '';
 });
 
-document.getElementById('aboutWindowHeader').addEventListener('mousedown', function() {
-    document.getElementById('aboutWindowHeader').addEventListener('mousemove', function(e) {
-        var x = e.clientX;
-        var y = e.clientY;
-        document.getElementById('aboutWindowHeader').style.left = x + 'px';
-        document.getElementById('aboutWindowHeader').style.top = y + 'px';
-    });
-    document.getElementById('aboutWindowHeader').addEventListener('mouseup', function() {
-        document.getElementById('aboutWindowHeader').removeEventListener('mousemove', function(e) {
-            var x = e.clientX;
-            var y = e.clientY;
-            document.getElementById('aboutWindowHeader').style.left = x + 'px';
-            document.getElementById('aboutWindowHeader').style.top = y + 'px';
-        });
-    });
-});
-
+// function to control the applications
 document.getElementById('applications').addEventListener('mousedown', function() {
     setTimeout(() => {
         document.getElementById('applications').style.display = '';
