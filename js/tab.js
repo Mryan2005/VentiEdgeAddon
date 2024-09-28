@@ -105,31 +105,44 @@ window.addEventListener('load', (event) => {
 
 // function to control the about window
 document.getElementById('about').addEventListener('click', (event) => {
-    if(stack[stack.length - 1] === 'About') {
-        return;
-    } else if(document.getElementById('aboutWindow').style.display === 'block') {
-        stack2.push('About');
-        for(let i = stack.length-1; i > 0; --i) {
-            if(stack[i] === 'About') {
+    if(document.getElementById('aboutWindow').style.display === 'block') {
+        document.getElementById('minAboutWindow').click();
+    } else {
+        if(stack[stack.length - 1] === 'About') {
+            return;
+        } else if(document.getElementById('aboutWindow').style.display === 'block') {
+            stack2.push('About');
+            for(let i = stack.length-1; i > 0; --i) {
+                if(stack[i] === 'About') {
+                    stack.pop();
+                    continue;
+                }
+                stack2.push(stack[i]);
                 stack.pop();
-                continue;
             }
-            stack2.push(stack[i]);
-            stack.pop();
+            for(let i = 0; stack2.length > 0; i++) {
+                stack.push(stack2[stack2.length-1]);
+                renewZIndex(stack2[stack2.length-1], i+1);
+                stack2.pop();
+            }
+        } else if(document.getElementById('aboutWindow').style.display === "") {
+            document.getElementById('aboutWindow').style.display = 'block';
+            stack.push('About');
         }
-        for(let i = 0; stack2.length > 0; i++) {
-            stack.push(stack2[stack2.length-1]);
-            renewZIndex(stack2[stack2.length-1], i+1);
-            stack2.pop();
-        }
-    } else if(document.getElementById('aboutWindow').style.display === "") {
-        document.getElementById('aboutWindow').style.display = 'block';
-        stack.push('About');
+        document.getElementById('barTitle').innerHTML = 'About';
     }
-    document.getElementById('barTitle').innerHTML = 'About';
 });
 
 document.getElementById('closeAboutWindow').addEventListener('click', (event) => {
+    stack.pop();
+    document.getElementById('aboutWindow').style.display = '';
+    document.getElementById('barTitle').innerHTML = 'Finder';
+});
+
+document.getElementById('maxAboutWindow').addEventListener('click', (event) => {
+});
+
+document.getElementById('minAboutWindow').addEventListener('click', (event) => {
     stack.pop();
     document.getElementById('aboutWindow').style.display = '';
     document.getElementById('barTitle').innerHTML = 'Finder';
