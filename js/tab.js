@@ -1,9 +1,11 @@
 // let some global variables be defined here
 var stack = ["Finder"], stack2 = [];
+var recentlyUsed = [];  // it a queue to store the recently used applications
 var searchWindowMaxStatus = false, aboutWindowMaxStatus = false;
 var containerStyle = document.getElementById('container').style;
 var topbarStyle = document.getElementById('topbar').style;
 var searchWindowShowStatus, aboutWindowShowStatus;
+var issearchWindowshow = false;
 
 // function to renew the z-index of the window
 function renewZIndex(elem, i) {
@@ -35,14 +37,8 @@ document.getElementById('body1').addEventListener('click', (event) => {
 document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById("closeAboutWindow").style.background = "#bababa";
     document.getElementById("closeAboutWindow").style.border = "1px solid #bababa";
-    document.getElementById("closeSearchWindow").style.background = "#bababa";
-    document.getElementById("closeSearchWindow").style.border = "1px solid #bababa";
     document.getElementById("maxAboutWindow").style.background = "#bababa";
     document.getElementById("maxAboutWindow").style.border = "1px solid #bababa";
-    document.getElementById("maxSearchWindow").style.background = "#bababa";
-    document.getElementById("maxSearchWindow").style.border = "1px solid #bababa";
-    document.getElementById("minSearchWindow").style.background = "#bababa";
-    document.getElementById("minSearchWindow").style.border = "1px solid #bababa";
     document.getElementById("minAboutWindow").style.background = "#bababa";
     document.getElementById("minAboutWindow").style.border = "1px solid #bababa";
     navigator.keyboard.lock(['Escape']);
@@ -188,88 +184,42 @@ document.getElementById('aboutWindowHeader').addEventListener('mousedown', funct
 
 
 // function to control the search window
-document.getElementById('closeSearchWindow').addEventListener('click', (event) => {
-    stack.pop();
-    document.getElementById('searchWindow').style.display = '';
-    document.getElementById('barTitle').innerHTML = 'Finder';
-});
-
 document.getElementById('appleSearch').addEventListener('click', (event) => {
-    if(stack[stack.length - 1] === 'Search') {
-        return;
-    } else if(document.getElementById('searchWindow').style.display === 'block') {
-        stack2.push('Search');
-        for(let i = stack.length-1; i > 0; --i) {
-            if(stack[i] === 'Search') {
-                stack.pop();
-                continue;
-            }
-            stack2.push(stack[i]);
-            stack.pop();
-        }
-        for(let i = 0; stack2.length > 0; i++) {
-            stack.push(stack2[stack2.length-1]);
-            renewZIndex(stack2[stack2.length-1], i+1);
-            stack2.pop();
-        }
-    } else if(document.getElementById('searchWindow').style.display === "") {
-        document.getElementById('searchWindow').style.display = 'block';
-        stack.push('Search');
-    }
+    document.getElementById('searchWindow').style.display = 'block';
     document.getElementById('barTitle').innerHTML = 'Search';
-});
-
-document.getElementById("closeSearchWindow").addEventListener("mouseenter", (event) => {
-    document.getElementById("closeSearchWindow").style.background = "#FF5D5B";
-    document.getElementById("closeSearchWindow").style.border = "1px solid #CF544D";
-});
-document.getElementById("closeSearchWindow").addEventListener("mouseleave", (event) => {
-    document.getElementById("closeSearchWindow").style.background = "#bababa";
-    document.getElementById("closeSearchWindow").style.border = "1px solid #bababa";
-});
-
-
-document.getElementById("maxSearchWindow").addEventListener("mouseenter", (event) => {
-    document.getElementById("maxSearchWindow").style.background = "#ffe100";
-    document.getElementById("maxSearchWindow").style.border = "1px solid #ffcc00";
-});
-document.getElementById("maxSearchWindow").addEventListener("mouseleave", (event) => {
-    document.getElementById("maxSearchWindow").style.background = "#bababa";
-    document.getElementById("maxSearchWindow").style.border = "1px solid #bababa";
-});
-document.getElementById("maxSearchWindow").addEventListener("click", (event) => {
-    if(searchWindowMaxStatus) {
-        searchWindowMaxStatus = false;
-        document.getElementById("searchWindow").style.left = "50%";
-        document.getElementById("searchWindow").style.top = "50%";
-        document.getElementById("searchWindow").style.width = "70%";
-        document.getElementById("searchWindow").style.height = "60%";
-        document.getElementById("searchWindow").style.alignContent = "";
-        document.getElementById("searchWindow").style.position = "fixed";
-        document.getElementById("searchWindow").style.border = "1px solid #ccc";
-        document.getElementById("searchWindow").style.borderRadius = "10px";
+    if(issearchWindowshow) {
+        document.getElementById('searchWindow').style.display = '';
+        issearchWindowshow = false;
     } else {
-        searchWindowMaxStatus = true;
-        document.getElementById("searchWindow").style.width = innerWidth||document.documentElement.clientWidth||document.body.clientWidth;
-        document.getElementById("searchWindow").style.height = innerHeight||document.documentElement.clientHeight||document.body.clientHeight;
-        document.getElementById("searchWindow").style.border = "none";
-        document.getElementById("searchWindow").style.borderRadius = "0";
-        document.getElementById("searchWindow").style.position = "absolute";
-        document.getElementById("searchWindow").style.alignContent = "";
-        document.getElementById("searchWindow").style.top = "52%";
-        document.getElementById("searchWindow").style.left = "";
+        document.getElementById('searchWindow').style.display = 'block';
+        issearchWindowshow = true;
+    }
+});
+
+document.getElementById('searchButton').addEventListener('click', (event) => {
+    var searchEngine = document.getElementById('searchEngine').value;
+    var searchWord = document.getElementById('searchInput').value;
+    if(searchEngine === 'google') {
+        var searchUrl = 'https://www.google.com/search?q=';
+    } else if(searchEngine === 'bing') {
+        var searchUrl = 'https://www.bing.com/search?q=';
+    } else if(searchEngine === 'baidu') {
+        var searchUrl = 'https://www.baidu.com/s?wd=';
+    } else if(searchEngine === 'bilibili') {
+        var searchUrl = 'https://search.bilibili.com/all?keyword=';
+    }
+    var searchUrl = searchUrl + searchWord;
+    window.open(searchUrl, '_blank');
+});
+
+// press enter to search
+document.getElementById('searchInput').addEventListener('keypress', function(event) {
+    if(event.key === 'Enter') {
+        document.getElementById('searchButton').click();
     }
 });
 
 
-document.getElementById("minSearchWindow").addEventListener("mouseenter", (event) => {
-    document.getElementById("minSearchWindow").style.background = "#0eaf05";
-    document.getElementById("minSearchWindow").style.border = "1px solid #00bb51";
-});
-document.getElementById("minSearchWindow").addEventListener("mouseleave", (event) => {
-    document.getElementById("minSearchWindow").style.background = "#bababa";
-    document.getElementById("minSearchWindow").style.border = "1px solid #bababa";
-});
 
 // function to control the launchpad
 document.getElementById('launchpad').addEventListener('click', (event) => {

@@ -304,6 +304,29 @@ header {
     z-index: 9999;
 }
 
+.searchWindow {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 15%;
+    transform: translate(-50%, -50%);
+    width: 55%;
+    height: 2%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.24);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 0.519481px solid rgba(255, 255, 255, 0.18);
+    box-shadow: rgba(142, 142, 142, 0.19) 0px 6px 15px 0px;
+    -webkit-box-shadow: rgba(142, 142, 142, 0.19) 0px 6px 15px 0px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 18px;
+    padding: 20px;
+    z-index: 9999;
+}
+
 .window-title {
     display: flex;
     justify-content: space-between;
@@ -410,4 +433,9 @@ header {
 .window-content {
     font-size: 14px;
     font-weight: 400;
+}
+
+.searchElement {
+    position: relative;
+    top: -25%;
 }
