@@ -1,0 +1,92 @@
+{
+    "SSPU": {
+        "name": "SSPU",
+        "description": "Shanghai Polytechnic University Website",
+        "url": "https://www.sspu.edu.cn/",
+        "icon": "https://ventiedgeaddon.mryan2005.top/icons/SSPU.png"
+    },
+    "OpenJudge": {
+        "name": "OpenJudge",
+        "description": "OpenJudge",
+        "url": "https://openjudge.cn/",
+        "icon": "https://ventiedgeaddon.mryan2005.top/icons/oj.png"
+    },
+    "GitHub": {
+        "name": "GitHub",
+        "description": "GitHub",
+        "url": "https://github.com",
+        "icon": "https://ventiedgeaddon.mryan2005.top/icons/github.png"
+    },
+    "Bilibili": {
+        "name": "Bilibili",
+        "description": "Bilibili",
+        "url": "https://www.bilibili.com/",
+        "icon": "https://ventiedgeaddon.mryan2005.top/icons/bilibili.png"
+    },
+    "Baidu": {
+        "name": "Baidu",
+        "description": "Baidu",
+        "url": "https://www.baidu.com/",
+        "icon": "https://ventiedgeaddon.mryan2005.top/icons/baidu.png"
+    },
+    "Google": {
+        "name": "Google",
+        "description": "Google",
+        "url": "https://www.google.com/",
+        "icon": "https://ventiedgeaddon.mryan2005.top/icons/google.png"
+    },
+    "Bing": {
+        "name": "Bing",
+        "description": "Bing",
+        "url": "https://cn.bing.com/",
+        "icon": "https://ventiedgeaddon.mryan2005.top/icons/bing.png"
+    },
+    "DeepL": {
+        "name": "DeepL",
+        "description": "DeepL",
+        "url": "https://www.deepl.com/",
+        "icon": "https://ventiedgeaddon.mryan2005.top/icons/deepl.png"
+    },
+    "csdn": {
+        "name": "csdn",
+        "description": "csdn",
+        "url": "https://www.csdn.net/",
+        "icon": "https://ventiedgeaddon.mryan2005.top/icons/csdn.png"
+    },
+    "MOOC": {
+        "name": "MOOC",
+        "description": "MOOC",
+        "url": "https://www.icourse163.org/",
+        "icon": "https://ventiedgeaddon.mryan2005.top/icons/mooc.png"
+    },
+    "jupyter": {
+        "name": "jupyter",
+        "description": "jupyter",
+        "url": "https://127.0.0.1:8888/",
+        "icon": "https://ventiedgeaddon.mryan2005.top/icons/jupyter.png"
+    },
+    "bakaXL": {
+        "name": "bakaXL",
+        "description": "bakaXL",
+        "url": "bakaXL://",
+        "icon": "https://ventiedgeaddon.mryan2005.top/icons/bakaXL.png"
+    },
+    "xuexitong": {
+        "name": "xuexitong",
+        "description": "xuexitong",
+        "url": "https://www.chaoxing.com/",
+        "icon": "https://ventiedgeaddon.mryan2005.top/icons/xuexitong.png"
+    },
+    "POTPLAYER": {
+        "name": "POTPLAYER",
+        "description": "POTPLAYER",
+        "url": "potplayer://",
+        "icon": "https://ventiedgeaddon.mryan2005.top/icons/potplayer.png"
+    },
+    "TENCENTMEETING": {
+        "name": "TENCENTMEETING",
+        "description": "TENCENTMEETING",
+        "url": "wemeet://",
+        "icon": "https://ventiedgeaddon.mryan2005.top/icons/tencentmeeting.png"
+    },
+}
