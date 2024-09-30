@@ -287,7 +287,7 @@ header {
     display: none;
     position: fixed;
     left: 50%;
-    top: 50%;
+    top: 46%;
     transform: translate(-50%, -50%);
     width: 70%;
     height: 60%;
@@ -411,7 +411,7 @@ header {
     position: absolute;
     display: block;
     align-items: center;
-    left: 45%;
+    left: 48%;
     top: 8.9px;
     height: 16px;
     font-weight: 700;
