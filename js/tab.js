@@ -173,6 +173,7 @@ document.getElementById('maxAboutWindow').addEventListener('click', (event) => {
         document.getElementById('aboutWindow').style.height = '92%';
         document.getElementById('aboutWindow').style.borderRadius = '0';
         document.getElementById('aboutWindow').style.zIndex = 100;
+        document.getElementById('aboutWindow').style.background = "#ffffff80";
         hideContainer();
         aboutWindowShowStatus1 = "max";
     } else {
@@ -182,6 +183,7 @@ document.getElementById('maxAboutWindow').addEventListener('click', (event) => {
         document.getElementById('aboutWindow').style.height = '60%';
         document.getElementById('aboutWindow').style.borderRadius = '18px';
         document.getElementById('aboutWindow').style.zIndex = 1;
+        document.getElementById('aboutWindow').style.background = "rgba(255, 255, 255, 0.24)";
         showContainer();
         aboutWindowShowStatus1 = "normal";
     }
