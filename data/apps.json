@@ -88,5 +88,17 @@
         "description": "TENCENTMEETING",
         "url": "wemeet://",
         "icon": "https://ventiedgeaddon.mryan2005.top/icons/tencentmeeting.png"
+    },
+    "vscode-on-computer": {
+        "name": "vscode on computer",
+        "description": "vscode on computer",
+        "url": "vscode://",
+        "icon": "https://ventiedgeaddon.mryan2005.top/icons/vscode.png"
+    },
+    "vscode-on-web": {
+        "name": "vscode on web",
+        "description": "vscode on web",
+        "url": "https://vscode.dev/",
+        "icon": "https://ventiedgeaddon.mryan2005.top/icons/vscode.png"
     }
 }
