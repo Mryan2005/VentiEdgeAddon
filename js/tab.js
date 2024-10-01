@@ -10,13 +10,13 @@ var issearchWindowshow = false;
 
 function showContainer() {
     for(let i = Number(document.getElementById('container').style.bottom.replace("px", "")); i <= 20; i++) {
-        setTimeout(() => { document.getElementById('container').style.bottom = String(i)+'px'; }, 230);
+        setTimeout(() => { document.getElementById('container').style.bottom = String(i)+'px'; }, 200);
     }
 }
 
 function hideContainer() {
     for(let i = Number(document.getElementById('container').style.bottom.replace("px", "")); i >= -82; i--) {
-        setTimeout(() => { document.getElementById('container').style.bottom = String(i)+'px'; }, 230);
+        setTimeout(() => { document.getElementById('container').style.bottom = String(i)+'px'; }, 200);
     }
 }
 
@@ -153,7 +153,16 @@ document.getElementById('closeAboutWindow').addEventListener('click', (event) =>
     stack.pop();
     document.getElementById('aboutWindow').style.display = '';
     document.getElementById('barTitle').innerHTML = 'Finder';
-    aboutWindowShowStatus1 = "";
+    if(aboutWindowShowStatus1 == "max") {
+        document.getElementById('aboutWindow').style.left = '50%';
+        document.getElementById('aboutWindow').style.top = '46%';
+        document.getElementById('aboutWindow').style.width = '70%';
+        document.getElementById('aboutWindow').style.height = '60%';
+        document.getElementById('aboutWindow').style.borderRadius = '18px';
+        document.getElementById('aboutWindow').style.zIndex = 1;
+        showContainer();
+    }
+    aboutWindowShowStatus1 = "normal";
 });
 
 document.getElementById('maxAboutWindow').addEventListener('click', (event) => {
