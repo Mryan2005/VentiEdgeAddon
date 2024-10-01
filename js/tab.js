@@ -1,12 +1,24 @@
 // let some global variables be defined here
 var stack = ["Finder"], stack2 = [];
-var isAboutWindowMax = false, isSearchWindowMax = false;
+var aboutWindowShowStatus1 = "", isSearchWindowMax = false;
 var recentlyUsed = [];  // it a queue to store the recently used applications
 var searchWindowMaxStatus = false, aboutWindowMaxStatus = false;
 var containerStyle = document.getElementById('container').style;
 var topbarStyle = document.getElementById('topbar').style;
 var searchWindowShowStatus, aboutWindowShowStatus;
 var issearchWindowshow = false;
+
+function showContainer() {
+    for(let i = Number(document.getElementById('container').style.bottom.replace("px", "")); i <= 20; i++) {
+        setTimeout(() => { document.getElementById('container').style.bottom = String(i)+'px'; }, 230);
+    }
+}
+
+function hideContainer() {
+    for(let i = Number(document.getElementById('container').style.bottom.replace("px", "")); i >= -82; i--) {
+        setTimeout(() => { document.getElementById('container').style.bottom = String(i)+'px'; }, 230);
+    }
+}
 
 // function to renew the z-index of the window
 function renewZIndex(elem, i) {
@@ -131,6 +143,9 @@ document.getElementById('about').addEventListener('click', (event) => {
             stack.push('About');
         }
         document.getElementById('barTitle').innerHTML = 'About';
+        if(aboutWindowShowStatus1 == "max") {
+            hideContainer();
+        }
     }
 });
 
@@ -138,20 +153,19 @@ document.getElementById('closeAboutWindow').addEventListener('click', (event) =>
     stack.pop();
     document.getElementById('aboutWindow').style.display = '';
     document.getElementById('barTitle').innerHTML = 'Finder';
+    aboutWindowShowStatus1 = "";
 });
 
 document.getElementById('maxAboutWindow').addEventListener('click', (event) => {
-    if(isAboutWindowMax == false) {
+    if(aboutWindowShowStatus1 != "max") {
         document.getElementById('aboutWindow').style.left = '50%';
         document.getElementById('aboutWindow').style.top = '52%';
         document.getElementById('aboutWindow').style.width = '97%';
         document.getElementById('aboutWindow').style.height = '92%';
         document.getElementById('aboutWindow').style.borderRadius = '0';
         document.getElementById('aboutWindow').style.zIndex = 100;
-        for(let i = Number(document.getElementById('container').style.bottom.replace("px", "")); i >= -82; i--) {
-            setTimeout(() => { document.getElementById('container').style.bottom = String(i)+'px'; }, 230);
-        }
-        isAboutWindowMax = true;
+        hideContainer();
+        aboutWindowShowStatus1 = "max";
     } else {
         document.getElementById('aboutWindow').style.left = '50%';
         document.getElementById('aboutWindow').style.top = '46%';
@@ -159,16 +173,17 @@ document.getElementById('maxAboutWindow').addEventListener('click', (event) => {
         document.getElementById('aboutWindow').style.height = '60%';
         document.getElementById('aboutWindow').style.borderRadius = '18px';
         document.getElementById('aboutWindow').style.zIndex = 1;
-        for(let i = Number(document.getElementById('container').style.bottom.replace("px", "")); i <= 20; i++) {
-            setTimeout(() => { document.getElementById('container').style.bottom = String(i)+'px'; }, 230);
-        }
-        isAboutWindowMax = false;
+        showContainer();
+        aboutWindowShowStatus1 = "normal";
     }
 });
 
 document.getElementById('minAboutWindow').addEventListener('click', (event) => {
     stack.pop();
     document.getElementById('aboutWindow').style.display = '';
+    if(aboutWindowShowStatus1 == "max") {
+        showContainer();
+    }
     document.getElementById('barTitle').innerHTML = 'Finder';
 });
 
