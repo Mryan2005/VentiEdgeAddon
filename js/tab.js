@@ -1,5 +1,6 @@
 // let some global variables be defined here
 var stack = ["Finder"], stack2 = [];
+var isAboutWindowMax = false, isSearchWindowMax = false;
 var recentlyUsed = [];  // it a queue to store the recently used applications
 var searchWindowMaxStatus = false, aboutWindowMaxStatus = false;
 var containerStyle = document.getElementById('container').style;
@@ -140,6 +141,29 @@ document.getElementById('closeAboutWindow').addEventListener('click', (event) =>
 });
 
 document.getElementById('maxAboutWindow').addEventListener('click', (event) => {
+    if(isAboutWindowMax == false) {
+        document.getElementById('aboutWindow').style.left = '50%';
+        document.getElementById('aboutWindow').style.top = '52%';
+        document.getElementById('aboutWindow').style.width = '97%';
+        document.getElementById('aboutWindow').style.height = '92%';
+        document.getElementById('aboutWindow').style.borderRadius = '0';
+        document.getElementById('aboutWindow').style.zIndex = 100;
+        for(let i = Number(document.getElementById('container').style.bottom.replace("px", "")); i >= -82; i--) {
+            setTimeout(() => { document.getElementById('container').style.bottom = String(i)+'px'; }, 230);
+        }
+        isAboutWindowMax = true;
+    } else {
+        document.getElementById('aboutWindow').style.left = '50%';
+        document.getElementById('aboutWindow').style.top = '46%';
+        document.getElementById('aboutWindow').style.width = '70%';
+        document.getElementById('aboutWindow').style.height = '60%';
+        document.getElementById('aboutWindow').style.borderRadius = '18px';
+        document.getElementById('aboutWindow').style.zIndex = 1;
+        for(let i = Number(document.getElementById('container').style.bottom.replace("px", "")); i <= 20; i++) {
+            setTimeout(() => { document.getElementById('container').style.bottom = String(i)+'px'; }, 230);
+        }
+        isAboutWindowMax = false;
+    }
 });
 
 document.getElementById('minAboutWindow').addEventListener('click', (event) => {
