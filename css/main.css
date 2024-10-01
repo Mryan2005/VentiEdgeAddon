@@ -5,9 +5,9 @@ body {
 
 .backgroundImage {
     background-repeat: no-repeat;
-    background-size: 116%;
-    object-fit: cover;
-    background-position-x: 50%;
+    background-size: 115%;
+    width: auto;
+    height: 100%
 }
 
 .app {
