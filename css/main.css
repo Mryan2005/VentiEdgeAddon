@@ -3,6 +3,39 @@ body {
     padding: 0;
 }
 
+.settingsWindowTitle {
+    left: 17%;
+    top: 2%;
+    position: absolute;
+    height: 16px;
+    font-weight: 700;
+    font-size: 13px;
+    user-select: none;
+    -webkit-user-drag: none;
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+.Normalsettings {
+    position: absolute;
+    left: 18%;
+    top: 6%;
+    width: auto;
+}
+
+.settingsTypeLarge {
+    width: 12%;
+}
+
+.divLine {
+    border-left: 1px solid black;
+    height: 100%;
+    width: 2px;
+    left: 14%;
+    position: absolute;
+    top: 0%;
+}
+
 .backgroundImage {
     background-repeat: no-repeat;
     background-size: 115%;
