@@ -21,14 +21,14 @@ function hideSearchWindow() {
 }
 
 function showContainer() {
-    $("div").animate({bottom:'20px'}, 300);
+    $("#container").animate({bottom:'20px'}, 50);
     // for(let i = Number(document.getElementById('container').style.bottom.replace("px", "")); i <= 20; i++) {
     //     setTimeout(() => { document.getElementById('container').style.bottom = String(i)+'px'; }, 200);
     // }
 }
 
 function hideContainer() {
-    $("div").animate({bottom:'-82px'}, 300);
+    $("#container").animate({bottom:'-82px'}, 50);
     // for(let i = Number(document.getElementById('container').style.bottom.replace("px", "")); i >= -82; i--) {
     //     setTimeout(() => { document.getElementById('container').style.bottom = String(i)+'px'; }, 200);
     // }
@@ -315,15 +315,15 @@ document.getElementById('searchInput').addEventListener('keypress', function(eve
 
 // function to control the launchpad
 document.getElementById('launchpad').addEventListener('click', (event) => {
+    hideContainer();
     stack.push('launchpad');
     if(issearchWindowshow) {
         hideSearchWindow();
         issearchWindowshow = false;
     }
     aboutWindowShowStatus = document.getElementById('aboutWindow').style.display != 'none' ? document.getElementById('aboutWindow').style.display : 'none';
-    document.getElementById('applications').style.display = 'block';
+    $('#applications').fadeIn(50);
     document.getElementById('topbar').style.display = 'none';
-    document.getElementById('container').style.display = 'none';
     document.getElementById('searchWindow').style.display = '';
     document.getElementById('aboutWindow').style.display = '';
 });
@@ -331,9 +331,9 @@ document.getElementById('launchpad').addEventListener('click', (event) => {
 // function to control the applications
 document.getElementById('applications').addEventListener('mousedown', function() {
     setTimeout(() => {
-        document.getElementById('applications').style.display = '';
+        $('#applications').fadeOut(50);
         document.getElementById('topbar').style = topbarStyle;
-        document.getElementById('container').style = containerStyle;
+        showContainer();
         document.getElementById('searchWindow').style.display = searchWindowShowStatus;
         document.getElementById('aboutWindow').style.display = aboutWindowShowStatus;
         stack.pop();
