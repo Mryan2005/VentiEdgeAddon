@@ -1,3 +1,7 @@
+// include js files
+
+// import { fadeIn } from './jquery-3.7.1.min.js';
+
 // let some global variables be defined here
 var stack = ["Finder"], stack2 = [];
 var aboutWindowShowStatus1 = "", isSearchWindowMax = false;
@@ -8,16 +12,26 @@ var topbarStyle = document.getElementById('topbar').style;
 var searchWindowShowStatus, aboutWindowShowStatus;
 var issearchWindowshow = false;
 
+function showSearchWindow() {
+    $("#searchWindow").fadeIn(200);
+}
+
+function hideSearchWindow() {
+    $("#searchWindow").fadeOut(100);
+}
+
 function showContainer() {
-    for(let i = Number(document.getElementById('container').style.bottom.replace("px", "")); i <= 20; i++) {
-        setTimeout(() => { document.getElementById('container').style.bottom = String(i)+'px'; }, 200);
-    }
+    $("div").animate({bottom:'20px'}, 300);
+    // for(let i = Number(document.getElementById('container').style.bottom.replace("px", "")); i <= 20; i++) {
+    //     setTimeout(() => { document.getElementById('container').style.bottom = String(i)+'px'; }, 200);
+    // }
 }
 
 function hideContainer() {
-    for(let i = Number(document.getElementById('container').style.bottom.replace("px", "")); i >= -82; i--) {
-        setTimeout(() => { document.getElementById('container').style.bottom = String(i)+'px'; }, 200);
-    }
+    $("div").animate({bottom:'-82px'}, 300);
+    // for(let i = Number(document.getElementById('container').style.bottom.replace("px", "")); i >= -82; i--) {
+    //     setTimeout(() => { document.getElementById('container').style.bottom = String(i)+'px'; }, 200);
+    // }
 }
 
 // function to renew the z-index of the window
@@ -118,6 +132,10 @@ window.addEventListener('load', (event) => {
 
 // function to control the about window
 document.getElementById('about').addEventListener('click', (event) => {
+    if(issearchWindowshow) {
+        hideSearchWindow();
+        issearchWindowshow = false;
+    }
     if(document.getElementById('aboutWindow').style.display === 'block') {
         document.getElementById('minAboutWindow').click();
     } else {
@@ -152,6 +170,10 @@ document.getElementById('about').addEventListener('click', (event) => {
 document.getElementById('closeAboutWindow').addEventListener('click', (event) => {
     stack.pop();
     document.getElementById('aboutWindow').style.display = '';
+    if(issearchWindowshow) {
+        hideSearchWindow();
+        issearchWindowshow = false;
+    }
     document.getElementById('barTitle').innerHTML = 'Finder';
     if(aboutWindowShowStatus1 == "max") {
         document.getElementById('aboutWindow').style.left = '50%';
@@ -166,6 +188,10 @@ document.getElementById('closeAboutWindow').addEventListener('click', (event) =>
 });
 
 document.getElementById('maxAboutWindow').addEventListener('click', (event) => {
+    if(issearchWindowshow) {
+        hideSearchWindow();
+        issearchWindowshow = false;
+    }
     if(aboutWindowShowStatus1 != "max") {
         document.getElementById('aboutWindow').style.left = '50%';
         document.getElementById('aboutWindow').style.top = '52%';
@@ -191,6 +217,9 @@ document.getElementById('maxAboutWindow').addEventListener('click', (event) => {
 
 document.getElementById('minAboutWindow').addEventListener('click', (event) => {
     stack.pop();
+    if(document.getElementById('searchWindow').style.display === 'block') {
+        document.getElementById('searchWindow').style.display = '';
+    }
     document.getElementById('aboutWindow').style.display = '';
     if(aboutWindowShowStatus1 == "max") {
         showContainer();
@@ -248,13 +277,13 @@ document.getElementById('aboutWindowHeader').addEventListener('mousedown', funct
 
 // function to control the search window
 document.getElementById('appleSearch').addEventListener('click', (event) => {
-    document.getElementById('searchWindow').style.display = 'block';
+    showSearchWindow();
     document.getElementById('barTitle').innerHTML = 'Search';
     if(issearchWindowshow) {
-        document.getElementById('searchWindow').style.display = '';
+        hideSearchWindow();
         issearchWindowshow = false;
     } else {
-        document.getElementById('searchWindow').style.display = 'block';
+        showSearchWindow();
         issearchWindowshow = true;
     }
 });
@@ -287,7 +316,10 @@ document.getElementById('searchInput').addEventListener('keypress', function(eve
 // function to control the launchpad
 document.getElementById('launchpad').addEventListener('click', (event) => {
     stack.push('launchpad');
-    searchWindowShowStatus = document.getElementById('searchWindow').style.display != 'none' ? document.getElementById('searchWindow').style.display : 'none';
+    if(issearchWindowshow) {
+        hideSearchWindow();
+        issearchWindowshow = false;
+    }
     aboutWindowShowStatus = document.getElementById('aboutWindow').style.display != 'none' ? document.getElementById('aboutWindow').style.display : 'none';
     document.getElementById('applications').style.display = 'block';
     document.getElementById('topbar').style.display = 'none';
