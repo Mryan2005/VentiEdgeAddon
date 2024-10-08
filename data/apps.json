@@ -100,5 +100,29 @@
         "description": "vscode on web",
         "url": "https://vscode.dev/",
         "icon": "https://ventiedgeaddon.mryan2005.top/icons/vscode.png"
+    },
+    "cloudflare": {
+        "name": "cloudflare",
+        "description": "cloudflare",
+        "url": "https://dash.cloudflare.com/",
+        "icon": "https://ventiedgeaddon.mryan2005.top/icons/cloudflare.png"
+    },
+    "zhihu": {
+        "name": "zhihu",
+        "description": "zhihu",
+        "url": "https://www.zhihu.com/",
+        "icon": "https://ventiedgeaddon.mryan2005.top/icons/zhihu.png"
+    },
+    "outlook": {
+        "name": "outlook",
+        "description": "outlook",
+        "url": "https://outlook.live.com/",
+        "icon": "https://ventiedgeaddon.mryan2005.top/icons/outlook.png"
+    },
+    "touge": {
+        "name": "touge",
+        "description": "touge",
+        "url": "https://www.educoder.net/",
+        "icon": "https://ventiedgeaddon.mryan2005.top/icons/touge.png"
     }
 }
