@@ -330,12 +330,10 @@ document.getElementById('launchpad').addEventListener('click', (event) => {
 
 // function to control the applications
 document.getElementById('applications').addEventListener('mousedown', function() {
-    setTimeout(() => {
-        $('#applications').fadeOut(50);
-        document.getElementById('topbar').style = topbarStyle;
-        showContainer();
-        document.getElementById('searchWindow').style.display = searchWindowShowStatus;
-        document.getElementById('aboutWindow').style.display = aboutWindowShowStatus;
-        stack.pop();
-    }, 100);
+    $('#applications').fadeOut(50);
+    document.getElementById('topbar').style = topbarStyle;
+    showContainer();
+    document.getElementById('searchWindow').style.display = searchWindowShowStatus;
+    document.getElementById('aboutWindow').style.display = aboutWindowShowStatus;
+    stack.pop();
 });
