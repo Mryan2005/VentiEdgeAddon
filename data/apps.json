@@ -124,5 +124,11 @@
         "description": "touge",
         "url": "https://www.educoder.net/",
         "icon": "https://ventiedgeaddon.mryan2005.top/icons/touge.png"
+    },
+    "网易Email": {
+        "name": "网易Email",
+        "description": "网易Email",
+        "url": "https://email.163.com/",
+        "icon": "https://ventiedgeaddon.mryan2005.top/icons/163mail.png"
     }
 }

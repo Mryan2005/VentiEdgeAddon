@@ -1,9 +1,16 @@
+window.onload = function () {
+    // sleep function
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    sleep(1000);
+}
 // include js files
 
 // import { fadeIn } from './jquery-3.7.1.min.js';
 
 // let some global variables be defined here
-var stack = ["Finder"], stack2 = [];
+var stack = ["Finder"], stack2 = [], dqueue = [], dqueue2 = [];
 var aboutWindowShowStatus1 = "", isSearchWindowMax = false;
 var recentlyUsed = [];  // it a queue to store the recently used applications
 var searchWindowMaxStatus = false, aboutWindowMaxStatus = false;
@@ -11,6 +18,9 @@ var containerStyle = document.getElementById('container').style;
 var topbarStyle = document.getElementById('topbar').style;
 var searchWindowShowStatus, aboutWindowShowStatus;
 var issearchWindowshow = false;
+
+let screenWidth = window.screen.width;
+let screenHeight = window.screen.height;
 
 function showSearchWindow() {
     $("#searchWindow").fadeIn(200);
@@ -32,6 +42,24 @@ function hideContainer() {
     // for(let i = Number(document.getElementById('container').style.bottom.replace("px", "")); i >= -82; i--) {
     //     setTimeout(() => { document.getElementById('container').style.bottom = String(i)+'px'; }, 200);
     // }
+}
+
+function pushBack(dque,url, icon) {
+    dque.push({url: url, icon: icon});
+}
+
+function popFront(dque) {
+    var elem = dque[0];
+    dque.shift();
+    return elem;
+}
+
+function front(dequeue) {
+    return dequeue[0];
+}
+
+function back(dequeue) {
+    return dequeue[dequeue.length-1];
 }
 
 // function to renew the z-index of the window
@@ -193,16 +221,20 @@ document.getElementById('maxAboutWindow').addEventListener('click', (event) => {
         issearchWindowshow = false;
     }
     if(aboutWindowShowStatus1 != "max") {
-        document.getElementById('aboutWindow').style.left = '50%';
-        document.getElementById('aboutWindow').style.top = '52%';
-        document.getElementById('aboutWindow').style.width = '97%';
-        document.getElementById('aboutWindow').style.height = '92%';
+        document.getElementById('aboutWindow').style.width = document.body.offsetWidth+"px";
+        document.getElementById('aboutWindow').style.height = $(window).height()-30+"px";
+        var aboutWindowsSize1 = document.getElementById('aboutWindow');
+        var w = aboutWindowsSize1.offsetWidth/2;
+        var h = aboutWindowsSize1.offsetHeight/2;
+        document.getElementById('aboutWindow').style.left = w+"px";
+        document.getElementById('aboutWindow').style.top = h+30+"px";
         document.getElementById('aboutWindow').style.borderRadius = '0';
         document.getElementById('aboutWindow').style.zIndex = 100;
         document.getElementById('aboutWindow').style.background = "#ffffff80";
         hideContainer();
         aboutWindowShowStatus1 = "max";
     } else {
+        document.getElementById('aboutWindow').style.position = 'fixed';
         document.getElementById('aboutWindow').style.left = '50%';
         document.getElementById('aboutWindow').style.top = '46%';
         document.getElementById('aboutWindow').style.width = '70%';
@@ -337,3 +369,11 @@ document.getElementById('applications').addEventListener('mousedown', function()
     document.getElementById('aboutWindow').style.display = aboutWindowShowStatus;
     stack.pop();
 });
+
+pushBack(dqueue, 'http://openjudge.cn/', 'icons/oj.png');
+pushBack(dqueue, 'https://oldhome.sspu.edu.cn/', 'icons/SSPU.png');
+pushBack(dqueue, 'https://www.bilibili.com/', 'icons/bilibili.png');
+
+document.getElementById('container11').innerHTML = "<a href='"+dqueue[2].url+"'><img src='"+dqueue[2].icon+".png' alt='icon'></a>";
+document.getElementById('container10').innerHTML = "<a href='"+dqueue[1].url+"'><img src='"+dqueue[1].icon+".png' alt='icon'></a>";
+document.getElementById('container9').innerHTML = "<a href='"+dqueue[0].url+"'><img src='"+dqueue[0].icon+".png' alt='icon'></a>";
