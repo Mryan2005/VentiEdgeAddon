@@ -221,6 +221,8 @@ document.getElementById('applications').addEventListener('mousedown', function()
     stack.pop();
 });
 
+document.write("<script src='./js/windows/aboutWindow.js'></script>");
+
 pushBack(dqueue, 'http://openjudge.cn/', 'icons/oj.png');
 pushBack(dqueue, 'https://oldhome.sspu.edu.cn/', 'icons/SSPU.png');
 pushBack(dqueue, 'https://www.bilibili.com/', 'icons/bilibili.png');
